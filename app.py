@@ -19,9 +19,7 @@ EXPERIENCE = [
 ]
 
 PROJECTS = [
-    {"number": "01", "name": "Nome do seu projeto", "description": "Descreva o problema que o projeto resolve e o que você construiu.", "stack": ["Python", "Flask", "SQLite"], "url": "https://github.com/SEU-USUARIO/SEU-PROJETO", "kind": "Aplicação web"},
-    {"number": "02", "name": "Outro projeto interessante", "description": "Explique brevemente o desafio, sua contribuição e o resultado alcançado.", "stack": ["JavaScript", "API", "Docker"], "url": "https://github.com/SEU-USUARIO/OUTRO-PROJETO", "kind": "Projeto pessoal"},
-    {"number": "03", "name": "Projeto em destaque", "description": "Use este espaço para mostrar algo que represente bem seu jeito de trabalhar.", "stack": ["Automação", "Python"], "url": "https://github.com/SEU-USUARIO", "kind": "Código aberto"},
+    {"number": "01", "name": "Relatório Follow Up de Compras", "description": "Aplicativo desktop que acompanha pedidos de compra no WinThor, consulta dados do Oracle e exporta relatórios formatados para Excel.", "stack": ["Python", "Tkinter", "Oracle", "Excel"], "url": "https://github.com/Sipauba/relatorio-setor-compras", "kind": "Automação · Compras"},
 ]
 
 
