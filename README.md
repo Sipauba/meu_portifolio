@@ -1,16 +1,18 @@
 # Portfólio — Mateus Sipaúba
 
-Site pessoal em Flask com apresentação, trajetória e projetos. O conteúdo fica no início de `app.py` para ser atualizado sem alterar o HTML.
+Portfólio em Flask focado em RPA, automação e integrações. A página principal apresenta projetos de forma breve, com filtros no navegador e links para a documentação técnica no GitHub.
 
-## Personalizar
+## Atualizar conteúdo
 
-Edite `PROFILE`, `EXPERIENCE` e `PROJECTS` em `app.py`: troque cargo, apresentação, localização, e-mail e links; substitua os exemplos pelos seus dados reais. Copie um objeto existente para adicionar experiência ou projeto.
+- Edite `projects.py` para alterar projetos, categorias, tecnologias, destaques e URLs.
+- Edite `PROFILE`, `AREAS` e `STACK` em `app.py` para atualizar dados profissionais e competências.
+- O HTML fica em `templates/index.html`; estilos e interações ficam em `static/`.
 
 ## Executar localmente
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 flask --app app run --debug
 ```
@@ -19,10 +21,4 @@ Abra `http://127.0.0.1:5000`.
 
 ## Publicar no EasyPanel
 
-1. Envie o projeto para um repositório GitHub.
-2. No EasyPanel, crie um serviço **App** conectado ao repositório.
-3. Selecione build por **Dockerfile**. A aplicação escuta na porta indicada por `PORT` (padrão `5000`).
-4. Adicione `sipauba.com.br` e, se desejar, `www.sipauba.com.br` nos domínios do serviço.
-5. No DNS do domínio, configure os registros que o EasyPanel solicitar para o IP público da VPS e ative HTTPS/Let's Encrypt.
-
-Os registros exatos dependem do IP e da configuração do seu proxy EasyPanel; use os valores indicados pelo painel.
+Use o `Dockerfile` existente. A aplicação escuta na porta indicada por `PORT` (padrão `5000`). Configure o domínio e HTTPS no painel conforme a instalação.
