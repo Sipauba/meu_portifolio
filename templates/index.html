@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d15">
+  <meta name="theme-color" content="#090713">
   <meta name="description" content="Portfólio de Mateus de Souza Sipaúba: RPA, automação, integrações, IA, dados e IoT.">
   <title>Mateus Sipaúba | RPA, Automação e Integrações</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <script src="{{ url_for('static', filename='site.js') }}" defer></script>
 </head>
@@ -30,11 +30,14 @@
         <p class="hero-lead">Desenvolvo fluxos de RPA, integrações e ferramentas internas com n8n, APIs, bancos de dados e IA aplicada a processos.</p>
         <div class="hero-actions"><a class="button primary" href="#projetos">Explorar projetos <span>↘</span></a><a class="button secondary" href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">Ver GitHub <span>↗</span></a></div>
       </div>
-      <div class="hero-panel" role="group" aria-label="Visualização interativa de sistemas conectados">
-        <canvas class="network-canvas" aria-hidden="true"></canvas>
-        <div class="panel-top"><span>MAPA DE INTEGRAÇÕES</span><span class="panel-status"><i></i> ATIVO</span></div>
+      <div class="hero-panel" role="img" aria-label="Diagrama: sistemas e dados conectados à automação para gerar soluções operacionais">
+        <div class="panel-top"><span>ARQUITETURA DE SOLUÇÕES</span><span class="panel-status"><i></i> SISTEMAS CONECTADOS</span></div>
+        <div class="system-flow" aria-hidden="true">
+          <div class="system-node system-node-input"><span class="system-icon">▦</span><div><small>01 / ORIGEM</small><strong>Sistemas & dados</strong><span>WinThor · GLPI · Oracle</span></div></div>
+          <div class="system-node system-node-process"><span class="system-icon">✳</span><div><small>02 / PROCESSO</small><strong>Automação inteligente</strong><span>n8n · Python · IA</span></div></div>
+          <div class="system-node system-node-output"><span class="system-icon">↗</span><div><small>03 / ENTREGA</small><strong>Soluções internas</strong><span>Integrações · Alertas · Dados</span></div></div>
+        </div>
         <div class="panel-bottom"><span>RPA</span><span>APIs</span><span>DADOS</span><span>IA</span></div>
-        <button class="network-reset" type="button" aria-label="Reorganizar visualização de conexões">Reorganizar conexões ↗</button>
       </div>
       <a class="scroll-cue" href="#sobre">ROLE PARA EXPLORAR <span>↓</span></a>
     </section>
