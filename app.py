@@ -47,10 +47,14 @@ LEGACY_PROJECTS = {
 
 @app.get("/projetos/<slug>")
 def project_detail(slug):
+    project = next((item for item in PROJECTS if item["slug"] == slug), None)
+    if project is not None:
+        related = [item for item in PROJECTS if item["slug"] != slug and set(item["filters"]) & set(project["filters"])][:3]
+        return render_template("project_detail.html", project=project, profile=PROFILE, related=related)
     repo = LEGACY_PROJECTS.get(slug)
-    if repo is None:
-        abort(404)
-    return redirect(repo, code=302)
+    if repo is not None:
+        return redirect(repo, code=302)
+    abort(404)
 
 
 if __name__ == "__main__":

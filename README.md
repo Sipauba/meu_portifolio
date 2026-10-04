@@ -1,10 +1,10 @@
 # Portfólio — Mateus Sipaúba
 
-Portfólio em Flask focado em RPA, automação e integrações. A página principal apresenta projetos de forma breve, com filtros no navegador e links para a documentação técnica no GitHub.
+Portfólio em Flask focado em RPA, automação e integrações. A página principal apresenta projetos de forma breve, com filtros no navegador. Cada card abre um resumo do projeto, com acesso direto ao repositório no GitHub.
 
 ## Atualizar conteúdo
 
-- Edite `projects.py` para alterar projetos, categorias, tecnologias, destaques e URLs.
+- Edite `projects.py` para alterar projetos, categorias, tecnologias, destaques, conteúdo das páginas de resumo e URLs.
 - Edite `PROFILE`, `AREAS` e `STACK` em `app.py` para atualizar dados profissionais e competências.
 - O HTML fica em `templates/index.html`; estilos e interações ficam em `static/`.
 

@@ -3,58 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2ed">
-  <meta name="description" content="{{ project.name }} — projeto de {{ profile.name }}.">
-  <title>{{ project.name }} — {{ profile.name }}</title>
+  <meta name="theme-color" content="#080d15">
+  <meta name="description" content="{{ project.summary }}">
+  <title>{{ project.name }} | Projetos de Mateus Sipaúba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='site.js') }}" defer></script>
 </head>
-<body class="case-body">
-  <header class="topbar case-topbar">
-    <a class="wordmark" href="{{ url_for('home') }}">MS<span>.</span></a>
-    <nav><a href="{{ url_for('home') }}#sobre">Sobre</a><a href="{{ url_for('home') }}#experiencia">Experiência</a><a href="{{ url_for('home') }}#projetos">Projetos</a></nav>
-    <a class="contact-link" href="mailto:{{ profile.email }}">Vamos conversar <span>↗</span></a>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <div class="shell nav-inner">
+      <a class="wordmark" href="{{ url_for('home') }}" aria-label="Mateus Sipaúba, início">MS<span>.</span><small>PORTFOLIO / 2026</small></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+      <nav id="primary-nav" aria-label="Navegação principal"><a href="{{ url_for('home') }}#sobre">Sobre</a><a href="{{ url_for('home') }}#projetos">Projetos</a><a href="{{ url_for('home') }}#tecnologias">Tecnologias</a><a href="{{ url_for('home') }}#contato">Contato</a></nav>
+      <a class="nav-github" href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+    </div>
   </header>
-  <main>
-    <section class="case-hero">
-      <div class="shell">
-        <p class="eyebrow"><a href="{{ url_for('home') }}#projetos">PORTFÓLIO</a> / {{ project.number }} · {{ project.kind|upper }}</p>
-        <h1>{{ project.name }}</h1>
-        <p class="case-summary">{{ project.description }}</p>
-        <div class="tags case-tags">{% for tag in project.stack %}<span>{{ tag }}</span>{% endfor %}</div>
-        <div class="case-actions">
-          <a class="button button-dark" href="{{ url_for('home') }}#projetos">← Voltar aos projetos</a>
-          <a class="text-link" href="{{ project.repo }}" target="_blank" rel="noreferrer">Ver código no GitHub <span>↗</span></a>
-        </div>
+  <main id="conteudo">
+    <section class="detail-hero shell">
+      <a class="detail-back" href="{{ url_for('home') }}#projetos">← Voltar aos projetos</a>
+      <div class="detail-hero-grid">
+        <div><p class="section-label">PROJETO / {{ project.category|upper }}</p><h1>{{ project.name }}</h1><p class="detail-lead">{{ project.summary }}</p><div class="detail-actions"><a class="button primary" href="{{ project.repo }}" target="_blank" rel="noopener noreferrer">Ver no GitHub <span>↗</span></a><a class="button secondary" href="{{ url_for('home') }}#projetos">Todos os projetos <span>↗</span></a></div></div>
+        <div class="detail-mark" aria-hidden="true"><span>{{ project.symbol }}</span><small>RPA / INTEGRAÇÕES / SOLUÇÕES</small></div>
       </div>
     </section>
-    <section class="case-content section-pad">
-      <div class="shell case-layout">
-        <div class="case-article">
-          <section><p class="eyebrow">O CONTEXTO</p><h2>O problema por trás do projeto</h2><p>{{ project.context }}</p></section>
-          <section><p class="eyebrow">A SOLUÇÃO</p><h2>Como foi pensado</h2><p>{{ project.approach }}</p></section>
-          <section><p class="eyebrow">FLUXO DE TRABALHO</p><h2>Etapas principais</h2><ol class="case-steps">{% for step in project.steps %}<li>{{ step }}</li>{% endfor %}</ol></section>
-          <section><p class="eyebrow">IMPLEMENTAÇÃO</p><h2>Decisões técnicas</h2><p>{{ project.technical }}</p></section>
-        </div>
-        <aside class="case-aside">
-          <p class="eyebrow">FICHA DO PROJETO</p>
-          <h2>{{ project.kind }}</h2>
-          <p class="case-author">Desenvolvido por {{ profile.name }}</p>
-          <div class="case-aside-rule"></div>
-          <p class="eyebrow">TECNOLOGIAS</p>
-          <div class="tags case-tags">{% for tag in project.stack %}<span>{{ tag }}</span>{% endfor %}</div>
-          <div class="case-note"><strong>Contexto de execução</strong><p>{{ project.note }}</p></div>
-          <a class="case-repo-link" href="{{ project.repo }}" target="_blank" rel="noreferrer">Abrir repositório completo <span>↗</span></a>
-        </aside>
+    <section class="detail-body shell" aria-label="Resumo do projeto">
+      <div class="detail-main">
+        <div class="detail-section"><p class="section-label">01 / CONTEXTO</p><h2>O desafio</h2><p>{{ project.problem }}</p></div>
+        <div class="detail-section"><p class="section-label">02 / SOLUÇÃO</p><h2>Como funciona</h2><ol class="workflow-list">{% for step in project.workflow %}<li><span>0{{ loop.index }}</span><p>{{ step }}</p></li>{% endfor %}</ol></div>
+        <div class="detail-section"><p class="section-label">03 / CONTRIBUIÇÃO</p><h2>Por que importa</h2><p>{{ project.impact }}</p></div>
       </div>
+      <aside class="detail-aside"><p class="section-label">FICHA DO PROJETO</p><h2>{{ project.category }}</h2><p>Principais tecnologias</p><div class="tag-row">{% for item in project.stack %}<span>{{ item }}</span>{% endfor %}</div><a href="{{ project.repo }}" target="_blank" rel="noopener noreferrer">Documentação e código no GitHub <span>↗</span></a></aside>
     </section>
-    <section class="case-next shell">
-      <p class="eyebrow">MAIS PROJETOS</p>
-      <div>{% for item in projects %}{% if item.slug != project.slug %}<a href="{{ url_for('project_detail', slug=item.slug) }}">{{ item.name }} <span>↗</span></a>{% endif %}{% endfor %}</div>
-    </section>
+    <section class="related-section shell"><div class="section-heading"><div><p class="section-label">CONTINUE EXPLORANDO</p><h2>Projetos <span>relacionados.</span></h2></div></div><div class="related-grid">{% for item in related %}<a href="{{ url_for('project_detail', slug=item.slug) }}"><span class="category">{{ item.category }}</span><strong>{{ item.name }}</strong><span>Ver projeto ↗</span></a>{% endfor %}</div></section>
   </main>
-  <footer class="footer shell"><span>© {{ profile.name }} · 2026</span><span>Feito com intenção e Flask.</span><a href="{{ url_for('home') }}">Voltar ao portfólio ↑</a></footer>
+  <footer class="footer shell"><span>© 2026 {{ profile.name }}</span><span>Feito em Fortaleza, CE</span><a href="{{ url_for('home') }}#projetos">Voltar ao portfólio ↑</a></footer>
 </body>
 </html>
