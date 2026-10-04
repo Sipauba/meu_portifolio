@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed">
+  <meta name="description" content="{{ project.name }} — projeto de {{ profile.name }}.">
+  <title>{{ project.name }} — {{ profile.name }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="case-body">
+  <header class="topbar case-topbar">
+    <a class="wordmark" href="{{ url_for('home') }}">MS<span>.</span></a>
+    <nav><a href="{{ url_for('home') }}#sobre">Sobre</a><a href="{{ url_for('home') }}#experiencia">Experiência</a><a href="{{ url_for('home') }}#projetos">Projetos</a></nav>
+    <a class="contact-link" href="mailto:{{ profile.email }}">Vamos conversar <span>↗</span></a>
+  </header>
+  <main>
+    <section class="case-hero">
+      <div class="shell">
+        <p class="eyebrow"><a href="{{ url_for('home') }}#projetos">PORTFÓLIO</a> / {{ project.number }} · {{ project.kind|upper }}</p>
+        <h1>{{ project.name }}</h1>
+        <p class="case-summary">{{ project.description }}</p>
+        <div class="tags case-tags">{% for tag in project.stack %}<span>{{ tag }}</span>{% endfor %}</div>
+        <div class="case-actions">
+          <a class="button button-dark" href="{{ url_for('home') }}#projetos">← Voltar aos projetos</a>
+          <a class="text-link" href="{{ project.repo }}" target="_blank" rel="noreferrer">Ver código no GitHub <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="case-content section-pad">
+      <div class="shell case-layout">
+        <div class="case-article">
+          <section><p class="eyebrow">O CONTEXTO</p><h2>O problema por trás do projeto</h2><p>{{ project.context }}</p></section>
+          <section><p class="eyebrow">A SOLUÇÃO</p><h2>Como foi pensado</h2><p>{{ project.approach }}</p></section>
+          <section><p class="eyebrow">FLUXO DE TRABALHO</p><h2>Etapas principais</h2><ol class="case-steps">{% for step in project.steps %}<li>{{ step }}</li>{% endfor %}</ol></section>
+          <section><p class="eyebrow">IMPLEMENTAÇÃO</p><h2>Decisões técnicas</h2><p>{{ project.technical }}</p></section>
+        </div>
+        <aside class="case-aside">
+          <p class="eyebrow">FICHA DO PROJETO</p>
+          <h2>{{ project.kind }}</h2>
+          <p class="case-author">Desenvolvido por {{ profile.name }}</p>
+          <div class="case-aside-rule"></div>
+          <p class="eyebrow">TECNOLOGIAS</p>
+          <div class="tags case-tags">{% for tag in project.stack %}<span>{{ tag }}</span>{% endfor %}</div>
+          <div class="case-note"><strong>Contexto de execução</strong><p>{{ project.note }}</p></div>
+          <a class="case-repo-link" href="{{ project.repo }}" target="_blank" rel="noreferrer">Abrir repositório completo <span>↗</span></a>
+        </aside>
+      </div>
+    </section>
+    <section class="case-next shell">
+      <p class="eyebrow">MAIS PROJETOS</p>
+      <div>{% for item in projects %}{% if item.slug != project.slug %}<a href="{{ url_for('project_detail', slug=item.slug) }}">{{ item.name }} <span>↗</span></a>{% endif %}{% endfor %}</div>
+    </section>
+  </main>
+  <footer class="footer shell"><span>© {{ profile.name }} · 2026</span><span>Feito com intenção e Flask.</span><a href="{{ url_for('home') }}">Voltar ao portfólio ↑</a></footer>
+</body>
+</html>
