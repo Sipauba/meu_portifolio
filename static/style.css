@@ -169,3 +169,41 @@ body:before{height:850px;background:radial-gradient(ellipse at 76% 18%,#6731a83b
 @media(max-width:560px){.hero-panel{height:370px;min-height:370px}.panel-status{font-size:0}.panel-status i{width:7px;height:7px}.system-flow{inset:68px 18px 55px}.system-node{width:88%;padding:10px 12px;gap:10px}.system-node strong{font-size:13px}.system-node div>span{font-size:10px}.system-icon{width:37px;height:37px;font-size:20px}.panel-bottom{left:20px;right:20px}.hero h1{font-size:clamp(42px,11vw,60px)}}
 
 @media(max-width:560px){.system-node small{font-size:11px}.system-node div>span{font-size:12px}}
+
+/* Scroll reveal: applies only with JavaScript and the user's motion preference. */
+html{scrollbar-gutter:stable}
+.has-reveal .reveal-item{transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)!important}
+.has-reveal .reveal-item:not(.is-visible){opacity:0;transform:translateY(28px)}
+.has-reveal .reveal-item.is-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.has-reveal .reveal-item{opacity:1!important;transform:none!important;transition:none!important}}
+/* Project summary dialog */
+body.modal-open{overflow:hidden}
+.project-dialog{width:min(860px,calc(100% - 32px));max-height:min(88vh,850px);padding:0;border:1px solid #ae86dc88;border-radius:20px;background:#151022;color:var(--text);box-shadow:0 30px 110px #030207cc;overflow:auto}
+.project-dialog::backdrop{background:#05030bc9;backdrop-filter:blur(7px)}
+.dialog-inner{padding:clamp(24px,4vw,44px);background:radial-gradient(circle at 100% 0,#70409d42,transparent 40%),radial-gradient(circle at 0 95%,#285f9b2b,transparent 45%),#151022}
+.dialog-top{display:flex;align-items:start;justify-content:space-between;gap:20px}
+.dialog-top .section-label{margin:10px 0 0}
+.dialog-close{width:42px;height:42px;flex:none;border:1px solid #9678b666;border-radius:50%;background:#ffffff0a;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.dialog-close:hover,.dialog-back:hover{border-color:#c6a7ff;background:#ffffff18}
+.project-dialog h2{font-family:var(--display);font-size:clamp(32px,4vw,50px);line-height:1.13;letter-spacing:-.055em;margin:18px 0}
+.dialog-summary{font-size:18px;line-height:1.7;color:var(--muted);max-width:730px;margin:0 0 28px}
+.dialog-columns{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(190px,.7fr);gap:42px;border-top:1px solid var(--line);padding-top:28px}
+.dialog-main section+section{margin-top:28px}
+.dialog-main .section-label,.dialog-aside .section-label{margin:0 0 10px}
+.dialog-main section>p:not(.section-label){font-size:16px;line-height:1.7;color:var(--muted);margin:0}
+.dialog-main .workflow-list{margin:10px 0 0}
+.dialog-main .workflow-list li{padding:11px 0;grid-template-columns:35px 1fr;gap:10px}
+.dialog-main .workflow-list li p{font-size:15px;line-height:1.55}
+.dialog-aside .tag-row{margin-top:16px}
+.dialog-footer{display:flex;align-items:center;flex-wrap:wrap;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:24px}
+.dialog-back{border:1px solid #9678b666;border-radius:999px;background:#ffffff08;color:var(--text);padding:15px 21px;font:700 15px var(--sans);cursor:pointer}
+@media(max-width:650px){.project-dialog{width:100%;max-width:none;max-height:92dvh;height:auto;margin:auto 0 0;border-radius:20px 20px 0 0}.dialog-columns{grid-template-columns:1fr;gap:28px}.dialog-aside{border-top:1px solid var(--line);padding-top:22px}.dialog-summary{font-size:16px}.dialog-inner{padding:24px 20px 30px}.dialog-footer .button,.dialog-back{width:100%;justify-content:space-between}}
+/* Keep the repository action visible while reading a long project summary. */
+.project-dialog{overflow:hidden}
+.dialog-inner{display:flex;flex-direction:column;max-height:min(88vh,850px);padding:0}
+.dialog-scroll{min-height:0;overflow:auto;padding:clamp(24px,4vw,44px) clamp(24px,4vw,44px) 22px;scrollbar-color:#8060aa #1b1430}
+.dialog-footer{flex:none;margin:0;padding:18px clamp(24px,4vw,44px);background:#1d1730ec;border-top:1px solid var(--line);box-shadow:0 -10px 35px #09051277}
+@media(max-width:650px){.dialog-inner{max-height:92dvh}.dialog-scroll{padding:24px 20px 16px}.dialog-footer{padding:14px 20px}.dialog-footer .button,.dialog-back{padding:12px 17px}}
+
+.has-reveal .reveal-item{transition-delay:var(--reveal-delay,0ms)!important}
+@media(max-width:760px){.has-reveal .reveal-item{transition-delay:0ms!important}}

@@ -1,6 +1,6 @@
 # Portfólio — Mateus Sipaúba
 
-Portfólio em Flask focado em RPA, automação e integrações. A página principal apresenta projetos de forma breve, com filtros no navegador. Cada card abre um resumo do projeto, com acesso direto ao repositório no GitHub.
+Portfólio em Flask focado em RPA, automação e integrações. A página principal apresenta projetos de forma breve, com filtros no navegador. Cada card abre um resumo em popup, com acesso direto ao repositório no GitHub. As páginas individuais continuam disponíveis por URL.
 
 ## Atualizar conteúdo
 
