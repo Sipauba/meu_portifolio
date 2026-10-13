@@ -1,0 +1,178 @@
+{
+  "recorded_at_utc": "2026-10-13T02:24:19.288361+00:00",
+  "scope": "Local laboratory; field INP is not measured.",
+  "results": [
+    {
+      "page": "home",
+      "mode": "desktop",
+      "url": "http://127.0.0.1:5053/",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 358.8208,
+          "display": "0.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 442.8208,
+          "display": "0.4 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "speed-index": {
+          "value": 358.8208,
+          "display": "0.4 s"
+        }
+      },
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      }
+    },
+    {
+      "page": "home",
+      "mode": "mobile",
+      "url": "http://127.0.0.1:5053/",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1202.8706000000002,
+          "display": "1.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1802.8706000000002,
+          "display": "1.8 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "speed-index": {
+          "value": 1202.8706000000002,
+          "display": "1.2 s"
+        }
+      },
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    {
+      "page": "case",
+      "mode": "desktop",
+      "url": "http://127.0.0.1:5053/projetos/glados-assitente-ti",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 282.3997,
+          "display": "0.3 s"
+        },
+        "largest-contentful-paint": {
+          "value": 402.3997,
+          "display": "0.4 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "total-blocking-time": {
+          "value": 0,
+          "display": "0 ms"
+        },
+        "speed-index": {
+          "value": 282.3997,
+          "display": "0.3 s"
+        }
+      },
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      }
+    },
+    {
+      "page": "case",
+      "mode": "mobile",
+      "url": "http://127.0.0.1:5053/projetos/glados-assitente-ti",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "agentic-browsing": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1202.3357,
+          "display": "1.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 1802.3357,
+          "display": "1.8 s"
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0"
+        },
+        "total-blocking-time": {
+          "value": 82,
+          "display": "80 ms"
+        },
+        "speed-index": {
+          "value": 1202.3357,
+          "display": "1.2 s"
+        }
+      },
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    }
+  ]
+}

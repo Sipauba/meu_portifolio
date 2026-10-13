@@ -32,24 +32,18 @@
     {% endif %}
   </svg>
 {%- endmacro %}
+{% from 'project_visuals.html' import artwork %}
 {% macro diagram(project) -%}
   <div class="project-visual" aria-hidden="true">
-    <div class="visual-heading"><span>{{ 'MONITORAMENTO / IoT' if 'IoT' in project.filters else 'AUTOMAÇÃO / WORKFLOW' }}</span><span class="visual-cross">+</span></div>
-    <svg class="flow-diagram" viewBox="0 0 540 210" fill="none">
-      <path class="diagram-guide" d="M24 105h492M100 16v178M270 16v178M440 16v178" />
-      <path class="diagram-wire" d="M155 105h60m110 0h60" />
-      <path class="diagram-arrow" d="m204 100 6 5-6 5m169-10 6 5-6 5" />
-      {% for label in project.flow %}<g transform="translate({{ 45 + loop.index0 * 170 }}, 66)"><rect class="diagram-node{% if loop.index == 2 %} diagram-core{% endif %}" width="110" height="78" rx="10" /><text class="diagram-number" x="55" y="27" text-anchor="middle">0{{ loop.index }}</text><text class="diagram-label" x="55" y="52" text-anchor="middle">{{ label }}</text><circle class="diagram-port" cx="0" cy="39" r="3" /><circle class="diagram-port" cx="110" cy="39" r="3" /></g>{% endfor %}
-      {% if "IoT" in project.filters %}
-        <path class="diagram-signal" d="M45 175h36l8-8 10 16 12-27 10 19h31m234 0h34l8-8 10 16 12-27 10 19h30" />
-      {% endif %}
-    </svg>
+    <div class="visual-heading"><span>{{ project.category|upper }}</span><span class="visual-cross">+</span></div>
+    {{ artwork(project) }}
     <ol class="mobile-flow">{% for label in project.flow %}<li><span>0{{ loop.index }}</span><strong>{{ label }}</strong></li>{% endfor %}</ol>
-    <div class="visual-footer"><span>ENTRADA</span><span>PROCESSAMENTO</span><span>ENTREGA</span></div>
+    <div class="visual-footer"><span>ARQUITETURA CONCEITUAL</span><span>{{ project.flow|join(" → ") }}</span></div>
   </div>
 {%- endmacro %}
 {% macro project_card(project, index) -%}
   <article class="project-card {{ 'project-featured' if project.featured else 'project-compact' }}{% if index == 1 %} project-lead{% endif %}"
+           data-reveal
            data-filters="{{ project.filters|join('|') }}"
            data-search="{{ (project.name ~ ' ' ~ project.category ~ ' ' ~ project.summary ~ ' ' ~ project.stack|join(' '))|lower }}">
     {% if project.featured %}{{ diagram(project) }}{% endif %}

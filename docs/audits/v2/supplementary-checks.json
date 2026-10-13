@@ -1,0 +1,37 @@
+{
+  "checks": [
+    "1440px: dynamic collection label and case anchors pass",
+    "390px: dynamic collection label and case anchors pass",
+    "Reflow: 640 CSS px at DPR 2 (1280px desktop equivalent at 200%), home and modal pass",
+    "Forced colors: visible headline and keyboard map interaction pass"
+  ],
+  "screenshots": [
+    "about-1440.png",
+    "about-390.png",
+    "after-1440.jpg",
+    "after-390.jpg",
+    "after-hero-1440.png",
+    "after-hero-390.png",
+    "before-1440.jpg",
+    "before-390.jpg",
+    "before-hero-1440.png",
+    "before-hero-390.png",
+    "billing.png",
+    "case-1440.jpg",
+    "case-390.jpg",
+    "contact-1440.png",
+    "contact-390.png",
+    "glados.png",
+    "glpi.png",
+    "map-1440.png",
+    "map-390.png",
+    "monitoring.png",
+    "projects-1440.png",
+    "projects-390.png",
+    "purchases.png",
+    "stack-1440.png",
+    "stack-390.png"
+  ],
+  "browser": "153.0.8010.12",
+  "capture_notes": "Full-page and hero screenshots retain the real page. Isolated component screenshots omit sticky navigation and the skip link from the crop."
+}

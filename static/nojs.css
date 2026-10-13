@@ -1,0 +1,6 @@
+/* Render the complete mobile navigation before first paint when JS is disabled. */
+@media (max-width: 800px) {
+  .topbar nav {
+    display: flex;
+  }
+}

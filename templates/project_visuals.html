@@ -1,0 +1,71 @@
+{# Original schematics of documented flows. Labels describe architecture, not live data. #}
+{% macro node(x, y, label, caption='', core=false, width=132) -%}
+  <g transform="translate({{ x }}, {{ y }})">
+  <rect class="diagram-node{% if core %} diagram-core{% endif %}" width="{{ width }}" height="64" rx="10" />
+  <text class="diagram-number" x="{{ width / 2 }}" y="23" text-anchor="middle">{{ caption }}</text>
+  <text class="diagram-label" x="{{ width / 2 }}" y="45" text-anchor="middle">{{ label }}</text>
+  </g>
+{%- endmacro %}
+{% macro artwork(project) -%}
+  <svg class="architecture-art"
+       viewBox="0 0 560 260"
+       fill="none"
+       aria-hidden="true">
+    {% if project.slug == "glados-assitente-ti" %}
+      <circle class="diagram-orbit" cx="280" cy="130" r="108" /><circle class="diagram-orbit" cx="280" cy="130" r="76" />
+      <path class="diagram-wire" d="M146 130h68m132 0h68M280 98V42h134M280 162v58h134" />
+      {{ node(14, 98, 'WhatsApp', 'CONVERSA') }}
+      {{ node(214, 98, 'n8n + OpenAI', 'ORQUESTRAÇÃO', true) }}
+      {{ node(414, 10, 'GLPI', 'ATENDIMENTO') }}
+      {{ node(414, 98, 'Oracle · MySQL', 'CONSULTAS') }}
+      {{ node(414, 188, 'Redis', 'CONTEXTO') }}
+      <g class="diagram-port">
+      <circle cx="214" cy="130" r="3" /><circle cx="346" cy="130" r="3" /><circle cx="280" cy="98" r="3" /><circle cx="280" cy="162" r="3" />
+      </g>
+      <text class="diagram-caption" x="26" y="225">Da solicitação à ação.</text>
+    {% elif project.slug == "bot-cobranca" %}
+      <path class="diagram-wire" d="M146 95h68m132 0h68M280 127v47" />
+      {{ node(14, 63, 'Oracle', 'TÍTULOS') }}
+      {{ node(214, 63, 'n8n', 'VALIDAÇÃO', true) }}
+      {{ node(414, 63, 'WhatsApp', 'NOTIFICAÇÃO') }}
+      {{ node(214, 174, 'PostgreSQL', 'CONTROLE DE ENVIO') }}
+      <path class="diagram-detail" d="M35 154h90m-90 10h68m-68 10h80M435 155h82m-82 10h62m-62 10h72" />
+      <circle class="diagram-port" cx="280" cy="127" r="3" />
+    {% elif project.slug == "pinga_ni_mim" %}
+      <path class="diagram-wire" d="M130 66h34q16 0 16 16v33h30M130 172h34q16 0 16-16v-41M350 115h44" />
+      {{ node(10, 34, 'Ping', 'HOSTS', width=120) }}
+      {{ node(10, 140, 'HTTP', 'SERVIÇOS', width=120) }}
+      {{ node(210, 83, 'Python', 'MONITORAMENTO', true, 140) }}
+      {{ node(394, 83, 'Evolution API', 'ALERTAS', width=154) }}
+      <path class="diagram-signal" d="M210 206h23l10-14 13 25 17-39 15 28h23l9-9 11 9h19" />
+      <text class="diagram-caption" x="398" y="200">Falha e recuperação</text>
+      <text class="diagram-caption" x="398" y="219">via WhatsApp</text>
+    {% elif project.slug in ["integra-glpi-ti-e-rh-admissao", "integra-glpi-ti-e-rh-demissao"] %}
+      <path class="diagram-wire" d="M146 126h68m132 0h68" />
+      <path class="diagram-return" d="M480 158v47H80v-47" />
+      {{ node(14, 94, 'GLPI · RH', 'SOLICITAÇÃO') }}
+      {{ node(214, 94, 'n8n + OpenAI', 'INTERPRETAÇÃO', true) }}
+      {{ node(414, 94, 'GLPI · TI', 'CHAMADO') }}
+      <text class="diagram-caption" x="280" y="237" text-anchor="middle">Atualização do chamado de origem</text>
+      <path class="diagram-arrow" d="m75 170 5-7 5 7m117-49 6 5-6 5m194-10 6 5-6 5" />
+    {% elif project.slug == "relatorio-setor-compras" %}
+      <path class="diagram-wire" d="M146 126h54m144 0h48" />
+      {{ node(14, 94, 'Oracle · WinThor', 'PEDIDOS') }}
+      {{ node(200, 94, 'Python + Pandas', 'CONSULTA', true, 144) }}
+      <g transform="translate(392, 40)">
+      <rect class="diagram-node" width="154" height="180" rx="10" />
+      <text class="diagram-number" x="18" y="27">RELATÓRIO EXCEL</text>
+      <path class="diagram-detail" d="M18 42h118M18 77h118M18 112h118M18 147h118M84 42v105" />
+      <text class="diagram-label" x="18" y="66">Pedidos</text><text class="diagram-label" x="18" y="101">Entrega</text>
+      <path class="diagram-signal" d="m100 60 5 5 9-12m-14 41 5 5 9-12" />
+      <text class="diagram-caption" x="18" y="169">Visão consolidada</text>
+      </g>
+    {% else %}
+      <path class="diagram-wire" d="M151 130h54m150 0h54" />
+      {% for label in project.flow %}{{ node(9 + loop.index0 * 200, 98, label, '0' ~ loop.index, loop.index == 2, 142) }}{% endfor %}
+      {% if "IoT" in project.filters %}
+        <path class="diagram-signal" d="M25 206h62l8-8 10 16 12-27 10 19h40m235 0h42l8-8 10 16 12-27 10 19h51" />
+      {% endif %}
+    {% endif %}
+  </svg>
+{%- endmacro %}

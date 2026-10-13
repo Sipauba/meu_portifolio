@@ -1,0 +1,89 @@
+{
+  "viewports": [
+    {
+      "width": 360,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1024,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1440,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1920,
+      "home": "pass",
+      "10_case_pages": "pass",
+      "interactions": "pass",
+      "horizontal_overflow": false
+    }
+  ],
+  "axe": [
+    {
+      "page": "home-390",
+      "violations": [],
+      "passes": 44
+    },
+    {
+      "page": "dialog-390",
+      "violations": [],
+      "passes": 23
+    },
+    {
+      "page": "case-390",
+      "violations": [],
+      "passes": 35
+    },
+    {
+      "page": "home-1440",
+      "violations": [],
+      "passes": 45
+    },
+    {
+      "page": "dialog-1440",
+      "violations": [],
+      "passes": 23
+    },
+    {
+      "page": "case-1440",
+      "violations": [],
+      "passes": 33
+    }
+  ],
+  "checks": [
+    "backdrop, skip link and active navigation: pass",
+    "reduced motion: pass",
+    "no JavaScript: navigation, content, case links: pass",
+    "delayed navigation script: no header layout shift (standalone regression run)"
+  ],
+  "console_errors": [],
+  "failed_requests": [],
+  "baseline_commit": "d180300",
+  "branch": "feat/portfolio-premium-v2",
+  "date": "2026-10-12 (America/Fortaleza)"
+}

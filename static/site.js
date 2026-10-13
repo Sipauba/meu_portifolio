@@ -82,6 +82,8 @@
     const filters = $$(".filter");
     const search = $("#project-search");
     const count = $(".project-count");
+    const collection = $("#collection-label");
+    const collectionLabel = collection.textContent;
     const empty = $(".empty-state");
     const normalize = (text) =>
       text
@@ -116,10 +118,11 @@
       });
       count.textContent = `${total} ${total === 1 ? "projeto" : "projetos"}${total !== cards.length ? ` de ${cards.length}` : ""}`;
       empty.hidden = total > 0;
-      grid.classList.toggle(
-        "is-filtered",
-        selected !== "Todos" || terms.length > 0,
-      );
+      const filtered = selected !== "Todos" || terms.length > 0;
+      grid.classList.toggle("is-filtered", filtered);
+      collection.textContent = filtered
+        ? "RESULTADOS DA SELEÇÃO"
+        : collectionLabel;
       if (save) {
         const url = new URL(location.href);
         if (selected === "Todos") url.searchParams.delete("categoria");

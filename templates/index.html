@@ -4,80 +4,70 @@
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-copy">
       <p class="eyebrow"><span class="status-dot"></span> AUTOMAÇÃO · INTEGRAÇÕES · IA APLICADA</p>
-      <p class="hero-intro">Olá, sou Mateus Sipaúba.</p>
+      <p class="hero-intro">Mateus Sipaúba <span>Desenvolvedor de automações & integrações</span></p>
       <h1 id="hero-title">
-        Sistemas
+        Conecto sistemas.
         <br>
-        conectados.
-        <br>
-        <span class="text-accent">Processos
+        <span class="text-accent">Simplifico
           <br>
-        simplificados.</span>
+        processos.</span>
       </h1>
-      <p class="hero-lead">Transformo rotinas operacionais em soluções com <strong>Python, n8n, APIs e inteligência artificial.</strong> Da integração entre sistemas ao acompanhamento da operação.</p>
+      <p class="hero-lead">Transformo processos complexos em soluções inteligentes com <strong>Python, n8n e IA.</strong> Da integração entre sistemas à operação de todos os dias.</p>
       <div class="hero-actions"><a class="button primary" href="#projetos">Explorar projetos {{ icon("arrow") }}</a><a class="button secondary" href="#contato">Entrar em contato {{ icon("mail") }}</a></div>
     </div>
-    <figure class="integration-map" aria-labelledby="map-title">
-      <div class="map-heading"><span id="map-title">CONECTAR. AUTOMATIZAR. RESOLVER.</span><span aria-hidden="true">↗</span></div>
-      <div class="map-canvas">
-        <svg viewBox="0 0 540 380" role="img" aria-labelledby="map-description">
-          <title id="map-description">Sistemas corporativos, APIs e bancos de dados entram em um fluxo de automação com n8n e Python para gerar ações e informação.</title>
-          <defs><pattern id="map-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#263344" /></pattern></defs>
-          <rect width="540" height="380" fill="url(#map-grid)" />
-          <g class="map-wires" fill="none">
-          <path d="M140 80h30q15 0 15 15v80q0 15 15 15h14M140 190h74M140 300h30q15 0 15-15v-80q0-15 15-15h14M334 190h22q15 0 15-15v-55q0-15 15-15h14M334 190h22q15 0 15 15v55q0 15 15 15h14" />
-          </g>
-          <g class="map-nodes map-origin">
-          <rect x="22" y="49" width="118" height="62" rx="9" /><rect x="22" y="159" width="118" height="62" rx="9" /><rect x="22" y="269" width="118" height="62" rx="9" /><text x="39" y="73" class="map-micro">SISTEMAS</text><text x="39" y="94">GLPI · WinThor</text><text x="39" y="183" class="map-micro">INTEGRAÇÕES</text><text x="39" y="204">APIs · Webhooks</text><text x="39" y="293" class="map-micro">DADOS</text><text x="39" y="314">SQL · Redis</text>
-          </g>
-          <g class="map-nodes map-process">
-          <rect class="map-core-ring" x="204" y="132" width="140" height="116" rx="18" /><rect class="map-core" x="214" y="142" width="120" height="96" rx="11" />
-          <path class="map-core-icon" d="m263 160 10 6-10 6m20-12-10 6 10 6" fill="none" />
-          <text x="274" y="197" text-anchor="middle" class="map-core-title">n8n + Python</text><text x="274" y="219" text-anchor="middle" class="map-micro">ORQUESTRAÇÃO + IA</text>
-          </g>
-          <g class="map-nodes map-output">
-          <rect x="400" y="74" width="118" height="62" rx="9" /><rect x="400" y="244" width="118" height="62" rx="9" /><text x="417" y="98" class="map-micro">AÇÕES</text><text x="417" y="119">Fluxos integrados</text><text x="417" y="268" class="map-micro">INFORMAÇÃO</text><text x="417" y="289">Alertas · Relatórios</text>
-          </g>
-          <g class="map-ports">
-          <circle cx="140" cy="80" r="3" /><circle cx="140" cy="190" r="3" /><circle cx="140" cy="300" r="3" /><circle cx="214" cy="190" r="4" /><circle cx="334" cy="190" r="4" /><circle cx="400" cy="105" r="3" /><circle cx="400" cy="275" r="3" />
-          </g>
-          <text class="map-axis" x="22" y="360">01 / ENTRADA</text><text class="map-axis" x="222" y="360">02 / PROCESSO</text><text class="map-axis" x="410" y="360">03 / ENTREGA</text>
-        </svg>
+    {% include "integration_map.html" %}
+    <div class="hero-bottom"><a class="scroll-cue" href="#projetos"><span aria-hidden="true">↓</span> Explore as soluções</a><span>{{ profile.location }} <span class="location-cross" aria-hidden="true">+</span> Desenvolvimento com contexto.</span></div>
+  </section>
+  <section class="section projects-section shell"
+           id="projetos"
+           aria-labelledby="projects-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">01 / PROJETOS SELECIONADOS</p>
+        <h2 id="projects-title">
+          Problemas reais.
+          <br>
+          <span class="muted">Engenharia na prática.</span>
+        </h2>
       </div>
-      <ol class="map-mobile" aria-label="Fluxo de integração">
-        <li class="map-nodes map-origin">
-          <span>01</span>
-          <div><strong>Sistemas & dados</strong><small>GLPI · WinThor · APIs · SQL</small></div>
-        </li>
-        <li class="map-nodes map-process">
-          <span>02</span>
-          <div><strong>Automação & IA</strong><small>n8n + Python · Orquestração</small></div>
-        </li>
-        <li class="map-nodes map-output">
-          <span>03</span>
-          <div><strong>Soluções para a operação</strong><small>Integrações · Alertas · Relatórios</small></div>
-        </li>
-      </ol>
-      <figcaption>
-        <div class="map-controls"
-             role="group"
-             aria-label="Explorar etapas da integração"
-             hidden>
-          <button type="button" data-map-step="origin" aria-pressed="true">01 <span>Entrada</span></button><button type="button" data-map-step="process" aria-pressed="false">02 <span>Processo</span></button><button type="button" data-map-step="output" aria-pressed="false">03 <span>Entrega</span></button>
-        </div>
-        <p id="map-caption"
-           aria-live="polite">Sistemas, APIs e dados: o ponto de partida de uma integração.</p>
-        <span class="map-note">VISÃO CONCEITUAL DAS SOLUÇÕES</span>
-      </figcaption>
-    </figure>
-    <div class="hero-bottom"><a class="scroll-cue" href="#sobre"><span aria-hidden="true">↓</span> Conheça meu trabalho</a><span>{{ profile.location }} <span class="location-cross" aria-hidden="true">+</span> Desenvolvimento com contexto.</span></div>
+      <p>Da conversa no WhatsApp ao monitoramento de infraestrutura. Explore o problema, o fluxo e as tecnologias de cada projeto.</p>
+    </div>
+    <div class="project-toolbar" hidden><div class="filters"
+     role="group"
+     aria-label="Filtrar projetos por categoria"><button class="filter active"
+        type="button"
+        data-filter="Todos"
+        aria-pressed="true">Todos <span>{{ projects|length }}</span></button>{% for name in ['RPA', 'IA', 'GLPI', 'Integrações', 'IoT'] %}<button class="filter"
+        type="button"
+        data-filter="{{ name }}"
+        aria-pressed="false">{{ name }}</button>{% endfor %}</div><label class="project-search">{{ icon("search") }}<span class="sr-only">Buscar projetos por nome ou tecnologia</span><input type="search"
+       id="project-search"
+       placeholder="Buscar projeto ou tecnologia"
+       autocomplete="off"
+       maxlength="120"></label></div>
+    <div class="collection-heading" id="destaques"><span id="collection-label">{{ projects|selectattr('featured')|list|length }} DESTAQUES · {{ projects|length }} PROJETOS</span><span class="project-count"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true">{{ projects|length }} projetos</span></div>
+    <div class="project-grid">{% for project in projects %}{{ project_card(project, loop.index) }}{% endfor %}</div>
+    <div class="empty-state" hidden>
+      <h3>Nenhum projeto encontrado.</h3>
+      <p>Tente outra tecnologia ou explore a seleção completa.</p>
+      <button class="button secondary"
+              id="reset-filters"
+              type="button">Limpar busca e filtros <span aria-hidden="true">↺</span></button>
+    </div>
+    <a class="all-repos text-link"
+       href="{{ profile.github }}"
+       target="_blank"
+       rel="noopener noreferrer">Mais código e documentação no GitHub {{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a>
   </section>
   <section class="section about-section"
            id="sobre"
            aria-labelledby="about-title">
     <div class="shell">
       <div class="section-heading">
-        <p class="eyebrow">01 / SOBRE & ATUAÇÃO</p>
+        <p class="eyebrow">02 / SOBRE & ATUAÇÃO</p>
         <span class="section-note">Entre a operação e o código.</span>
       </div>
       <div class="about-layout">
@@ -96,114 +86,78 @@
              rel="noopener noreferrer">Minha trajetória no LinkedIn {{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a>
         </div>
         <div class="expertise" id="atuacao" aria-label="Áreas de atuação">{% for number, title, description in areas %}<article class="expertise-row" data-reveal><span class="expertise-icon">{{ icon(['flow', 'code', 'spark', 'data'][loop.index0]) }}</span><div><h3>{{ title }}</h3>
-<p>{{ description }}</p></div><span class="row-number">{{ number }}</span></article>{% endfor %}</div></div>
+          <p>{{ description }}</p></div><span class="row-number">{{ number }}</span></article>{% endfor %}</div></div>
     </div>
-  </section>
-  <section class="section projects-section shell"
-           id="projetos"
-           aria-labelledby="projects-title">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">02 / PROJETOS</p>
-        <h2 id="projects-title">
-          Código que resolve.
-          <br>
-          <span class="muted">Soluções em contexto.</span>
-        </h2>
-      </div>
-      <p>Da conversa no WhatsApp ao monitoramento de infraestrutura. Explore o problema, o fluxo e as tecnologias de cada projeto.</p>
-    </div>
-    <div class="project-toolbar" hidden><div class="filters"
-     role="group"
-     aria-label="Filtrar projetos por categoria"><button class="filter active"
-        type="button"
-        data-filter="Todos"
-        aria-pressed="true">Todos <span>{{ projects|length }}</span></button>{% for name in ['RPA', 'IA', 'GLPI', 'Integrações', 'IoT'] %}<button class="filter"
-        type="button"
-        data-filter="{{ name }}"
-        aria-pressed="false">{{ name }}</button>{% endfor %}</div><label class="project-search">{{ icon("search") }}<span class="sr-only">Buscar projetos por nome ou tecnologia</span><input type="search"
-       id="project-search"
-       placeholder="Buscar projeto ou tecnologia"
-       autocomplete="off"
-       maxlength="120"></label></div>
-    <div class="collection-heading" id="destaques"><span id="collection-label">SELEÇÃO & ACERVO</span><span class="project-count"
-      role="status"
-      aria-live="polite"
-      aria-atomic="true">{{ projects|length }} projetos</span></div>
-    <div class="project-grid">{% for project in projects %}{{ project_card(project, loop.index) }}{% endfor %}</div>
-    <div class="empty-state" hidden>
-      <h3>Nenhum projeto encontrado.</h3>
-      <p>Tente outra tecnologia ou explore a seleção completa.</p>
-      <button class="button secondary"
-              id="reset-filters"
-              type="button">Limpar busca e filtros <span aria-hidden="true">↺</span></button>
-    </div>
-    <a class="all-repos text-link"
-       href="{{ profile.github }}"
-       target="_blank"
-       rel="noopener noreferrer">Mais código e documentação no GitHub {{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a>
   </section>
   <section class="section stack-section"
            id="tecnologias"
-           aria-labelledby="stack-title"><div class="shell stack-layout"><div class="stack-intro" data-reveal><p class="eyebrow">03 / TECNOLOGIAS</p><h2 id="stack-title">As ferramentas.<br><span class="muted">O que faço com elas.</span></h2>
-<p>Uma stack que acompanha o processo: conectar a origem, transformar os dados e sustentar a entrega.</p><span class="stack-mark" aria-hidden="true">{<span>↗</span>}</span></div><div class="stack-list">{% for group, items in stack %}<div class="stack-row" data-reveal><h3><span class="row-number">{{ '%02d'|format(loop.index) }}</span>{{ group }}</h3>
-<ul class="tags">{% for item in items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endfor %}</div></div></section>
-  <section class="contact-section shell"
-           id="contato"
-           aria-labelledby="contact-title">
-    <div class="contact-copy">
-      <p class="eyebrow">04 / VAMOS CONVERSAR</p>
-      <h2 id="contact-title">
-        O próximo processo
-        <br>
-        pode ser <span class="text-accent">mais simples.</span>
-      </h2>
-      <p>Uma oportunidade, uma integração ou um desafio técnico. Estou aberto a conversar sobre o que podemos construir.</p>
-      <a class="button primary" href="mailto:{{ profile.email }}">Entrar em contato {{ icon("arrow") }}</a>
-    </div>
-    <div class="contact-links"><a href="mailto:{{ profile.email }}"><span>E-MAIL<strong>{{ profile.email }}</strong></span>{{ icon("arrow") }}</a><a href="{{ profile.linkedin }}"
+           aria-labelledby="stack-title">
+    <div class="shell stack-layout">
+      <div class="stack-intro" data-reveal>
+        <p class="eyebrow">03 / TECNOLOGIAS</p>
+        <h2 id="stack-title">
+          As ferramentas.
+          <br>
+          <span class="muted">O que faço com elas.</span>
+        </h2>
+        <p>Uma stack que acompanha o processo: conectar a origem, transformar os dados e sustentar a entrega.</p></div><div class="stack-list">{% for group, items in stack %}<div class="stack-row" data-reveal><h3><span class="row-number">{{ '%02d'|format(loop.index) }}</span>{{ group }}</h3>
+        <ul class="tags">{% for item in items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endfor %}</div></div></section>
+    <section class="contact-section shell"
+             id="contato"
+             aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <p class="eyebrow">04 / VAMOS CONVERSAR</p>
+        <h2 id="contact-title">
+          O próximo processo
+          <br>
+          pode ser <span class="text-accent">mais simples.</span>
+        </h2>
+        <p>Uma oportunidade, uma integração ou um desafio técnico. Estou aberto a conversar sobre o que podemos construir.</p>
+        <a class="button primary" href="mailto:{{ profile.email }}">Entrar em contato {{ icon("arrow") }}</a>
+      </div>
+      <div class="contact-links"><a href="mailto:{{ profile.email }}"><span>E-MAIL<strong>{{ profile.email }}</strong></span>{{ icon("arrow") }}</a><a href="{{ profile.linkedin }}"
    target="_blank"
    rel="noopener noreferrer"><span>TRAJETÓRIA<strong>LinkedIn</strong></span>{{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer"><span>CÓDIGO & DOCUMENTAÇÃO<strong>GitHub</strong></span>{{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a></div>
-  </section>
-{% endblock %}
-{% block overlays %}
-  <script id="projects-data" type="application/json">{{ projects|tojson }}</script>
-  <dialog class="project-dialog"
-          id="project-dialog"
-          aria-labelledby="dialog-title"
-          aria-describedby="dialog-summary">
-    <div class="dialog-top">
-      <span class="eyebrow" id="dialog-category"></span>
-      <button class="dialog-close"
-              type="button"
-              aria-label="Fechar resumo do projeto"
-              autofocus>×</button>
-    </div>
-    <div class="dialog-scroll" tabindex="0" aria-label="Conteúdo do resumo">
-      <h2 id="dialog-title"></h2>
-      <p class="dialog-summary" id="dialog-summary"></p>
-      <section>
-        <h3>O desafio</h3>
-        <p id="dialog-problem"></p>
-      </section>
-      <section>
-        <h3>Como funciona</h3>
-        <ol class="workflow-list" id="dialog-workflow">
-        </ol>
-      </section>
-      <section>
-        <h3>Por que importa</h3>
-        <p id="dialog-impact"></p>
-      </section>
-      <section>
-        <h3>Tecnologias</h3>
-        <ul class="tags" id="dialog-stack">
-        </ul>
-      </section>
-    </div>
-    <div class="dialog-footer"><a class="button primary" id="dialog-case">Explorar projeto {{ icon("arrow") }}</a><a class="button secondary"
+    </section>
+  {% endblock %}
+  {% block overlays %}
+    <script id="projects-data" type="application/json">{{ projects|tojson }}</script>
+    <dialog class="project-dialog"
+            id="project-dialog"
+            aria-labelledby="dialog-title"
+            aria-describedby="dialog-summary">
+      <div class="dialog-top">
+        <span class="eyebrow" id="dialog-category"></span>
+        <button class="dialog-close"
+                type="button"
+                aria-label="Fechar resumo do projeto"
+                autofocus>×</button>
+      </div>
+      <div class="dialog-scroll" tabindex="0" aria-label="Conteúdo do resumo">
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-summary" id="dialog-summary"></p>
+        <section>
+          <h3>O desafio</h3>
+          <p id="dialog-problem"></p>
+        </section>
+        <section>
+          <h3>Como funciona</h3>
+          <ol class="workflow-list" id="dialog-workflow">
+          </ol>
+        </section>
+        <section>
+          <h3>Por que importa</h3>
+          <p id="dialog-impact"></p>
+        </section>
+        <section>
+          <h3>Tecnologias</h3>
+          <ul class="tags" id="dialog-stack">
+          </ul>
+        </section>
+      </div>
+      <div class="dialog-footer"><a class="button primary" id="dialog-case">Explorar projeto {{ icon("arrow") }}</a><a class="button secondary"
    id="dialog-github"
    target="_blank"
    rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (nova aba)</span></a></div>
-  </dialog>
-{% endblock %}
+    </dialog>
+  {% endblock %}

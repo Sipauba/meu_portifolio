@@ -20,7 +20,7 @@ def render():
     .node{padding:12px 16px;border:1px solid #435469;border-radius:8px;display:flex;justify-content:space-between}.node span{color:#72d9dd}.node.center{border-color:#72d9dd;background:#193142;margin-left:35px}
     footer{display:flex;justify-content:space-between;margin-top:57px;border-top:1px solid #263344;padding-top:22px;font-size:12px;color:#a9b8c9;letter-spacing:1px}
     </style><header>LOGO<strong>Mateus Sipaúba</strong><span>FORTALEZA, CE · PORTFÓLIO</span></header>
-    <div class="body"><h1>Sistemas conectados.<br><span>Processos<br>simplificados.</span></h1><div class="diagram"><div class="node"><span>01</span> Sistemas & dados</div><div class="node center"><span>02</span> n8n + Python + IA</div><div class="node"><span>03</span> Integrações & soluções</div></div></div>
+    <div class="body"><h1>Conecto sistemas.<br><span>Simplifico<br>processos.</span></h1><div class="diagram"><div class="node"><span>01</span> Sistemas & dados</div><div class="node center"><span>02</span> n8n + Python + IA</div><div class="node"><span>03</span> Integrações & soluções</div></div></div>
     <footer><span>AUTOMAÇÃO · INTEGRAÇÕES · IA APLICADA</span><span>mateus.sipauba.com.br ↗</span></footer></html>""".replace(
         "FONT", font
     ).replace("LOGO", svg)

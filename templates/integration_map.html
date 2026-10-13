@@ -1,0 +1,70 @@
+<figure class="integration-map" aria-labelledby="map-title">
+  <div class="map-heading"><span id="map-title">DA COMPLEXIDADE À CONEXÃO</span><span aria-hidden="true">↗</span></div>
+  <div class="map-canvas">
+    <svg viewBox="0 0 600 430" role="img" aria-labelledby="map-description">
+      <title id="map-description">APIs e dados se conectam a uma automação em Python e n8n, com apoio de inteligência artificial, para integrar sistemas e entregar alertas e relatórios.</title>
+      <defs>
+      <pattern id="map-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#263344" /></pattern>
+      <radialGradient id="map-glow"><stop stop-color="#72d9dd" stop-opacity=".1" /><stop offset="1" stop-color="#72d9dd" stop-opacity="0" /></radialGradient>
+      </defs>
+      <rect width="600" height="430" fill="url(#map-grid)" />
+      <circle cx="304" cy="215" r="205" fill="url(#map-glow)" />
+      <g class="map-orbits" fill="none">
+      <circle cx="304" cy="215" r="117" /><circle cx="304" cy="215" r="172" />
+      </g>
+      <g class="map-wires" fill="none">
+      <path d="M150 120h24q20 0 20 20v55q0 20 20 20h24M150 310h24q20 0 20-20v-55q0-20 20-20h24M370 215h70M304 159V85q0-20 20-20h72M370 215h24q20 0 20 20v70q0 20 20 20h6" />
+      </g>
+      <g class="map-packets" fill="none" aria-hidden="true">
+      <path d="M150 120h24q20 0 20 20v55q0 20 20 20h24M370 215h70" />
+      </g>
+      <g class="map-nodes map-origin">
+      <rect x="18" y="82" width="132" height="76" rx="12" /><rect x="18" y="272" width="132" height="76" rx="12" />
+      <text x="34" y="107" class="map-micro">01 / CONECTAR</text><text x="34" y="134">APIs · Webhooks</text>
+      <text x="34" y="297" class="map-micro">DADOS</text><text x="34" y="324">SQL · Redis</text>
+      </g>
+      <g class="map-nodes map-process">
+      <rect class="map-core-ring" x="228" y="149" width="152" height="132" rx="25" />
+      <rect class="map-core" x="238" y="159" width="132" height="112" rx="18" />
+      <path class="map-core-icon" d="m292 180-9 8 9 8m24-16 9 8-9 8m-8-21-8 26" fill="none" />
+      <text x="304" y="229" text-anchor="middle" class="map-core-title">n8n + Python</text><text x="304" y="251" text-anchor="middle" class="map-micro">02 / ORQUESTRAR</text>
+      <rect x="396" y="30" width="164" height="70" rx="12" /><text x="413" y="56" class="map-micro">INTELIGÊNCIA APLICADA</text><text x="413" y="79">OpenAI · LLMs</text>
+      </g>
+      <g class="map-nodes map-output">
+      <rect x="440" y="177" width="142" height="76" rx="12" /><rect x="440" y="287" width="142" height="76" rx="12" />
+      <text x="456" y="202" class="map-micro">03 / INTEGRAR</text><text x="456" y="229">GLPI · WinThor</text>
+      <text x="456" y="312" class="map-micro">ENTREGAR</text><text x="456" y="339">Alertas · Relatórios</text>
+      </g>
+      <g class="map-ports">
+      <circle cx="150" cy="120" r="3" /><circle cx="150" cy="310" r="3" /><circle cx="238" cy="215" r="3" /><circle cx="370" cy="215" r="3" /><circle cx="440" cy="215" r="3" /><circle cx="440" cy="325" r="3" /><circle cx="396" cy="65" r="3" />
+      </g>
+      <text class="map-axis" x="18" y="401">SISTEMAS DIFERENTES.</text><text class="map-axis" x="440" y="401">UM FLUXO CONECTADO.</text>
+    </svg>
+  </div>
+  <ol class="map-mobile" aria-label="Fluxo de integração">
+    <li class="map-nodes map-origin">
+      <span>{{ icon("code") }}</span>
+      <div><strong>Conectar sistemas & dados</strong><small>APIs · Webhooks · SQL · Redis</small></div>
+    </li>
+    <li class="map-nodes map-process">
+      <span>{{ icon("flow") }}</span>
+      <div><strong>Orquestrar com automação & IA</strong><small>n8n · Python · OpenAI</small></div>
+    </li>
+    <li class="map-nodes map-output">
+      <span>{{ icon("spark") }}</span>
+      <div><strong>Entregar soluções para a operação</strong><small>GLPI · WinThor · Alertas · Relatórios</small></div>
+    </li>
+  </ol>
+  <figcaption>
+    <div class="map-controls"
+         role="group"
+         aria-label="Explorar etapas da integração"
+         hidden>
+      <button type="button" data-map-step="origin" aria-pressed="true">01 <span>Entrada</span></button>
+      <button type="button" data-map-step="process" aria-pressed="false">02 <span>Processo</span></button>
+      <button type="button" data-map-step="output" aria-pressed="false">03 <span>Entrega</span></button>
+    </div>
+    <p id="map-caption" aria-live="polite">Sistemas, APIs e dados: o ponto de partida de uma integração.</p>
+    <span class="map-note">MAPA CONCEITUAL · EXPLORE AS ETAPAS</span>
+  </figcaption>
+</figure>

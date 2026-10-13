@@ -7,6 +7,25 @@ from pathlib import Path
 from playwright.sync_api import expect, sync_playwright
 
 
+def check_delayed_navigation(browser, base):
+    """Loading enhancement code late must not move the start of the content."""
+    context = browser.new_context(viewport={"width": 390, "height": 844})
+    page = context.new_page()
+    initial_top = []
+
+    def delay_script(route):
+        page.wait_for_timeout(750)
+        initial_top.append(page.locator("#conteudo").bounding_box()["y"])
+        route.continue_()
+
+    page.route("**/static/site.js?*", delay_script)
+    page.goto(base, wait_until="networkidle")
+    expect(page.locator(".menu-toggle")).to_be_visible()
+    assert len(initial_top) == 1
+    assert page.locator("#conteudo").bounding_box()["y"] == initial_top[0]
+    context.close()
+
+
 def run(args):
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
@@ -194,6 +213,8 @@ def run(args):
         assert np.evaluate("document.documentElement.scrollWidth <= innerWidth")
         report["checks"].append("no JavaScript: navigation, content, case links: pass")
         nojs.close()
+        check_delayed_navigation(browser, base)
+        report["checks"].append("delayed navigation script: no header layout shift")
         browser.close()
     (output / "browser-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
     assert not report["console_errors"], report["console_errors"]

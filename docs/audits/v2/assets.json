@@ -1,0 +1,22 @@
+{
+  "static/style.css": {
+    "bytes": 42604,
+    "sha256": "7bd15c33673c3b145b679bfbc83de411d1c747557171c6c84226c975fbcbe747"
+  },
+  "static/site.js": {
+    "bytes": 11396,
+    "sha256": "56b606fb4d3a511fada0abb01566d824f58257c6bafb5b2f8619a91038d19d87"
+  },
+  "static/nojs.css": {
+    "bytes": 153,
+    "sha256": "c1a3d602cf3213ca616b59d89672231fcedd43d2e4f11accfd0c6cd63b96f834"
+  },
+  "static/fonts/manrope-latin.woff2": {
+    "bytes": 24024,
+    "sha256": "485e504f51dfa51de8505ab4f74370d22d84511fddbaaed6c9296f4e7ac2b715"
+  },
+  "static/fonts/sora-latin.woff2": {
+    "bytes": 38440,
+    "sha256": "4c541ed356a53c9a3c45ec6775aad6b9face193bc35ed047bab563c50e8cd626"
+  }
+}

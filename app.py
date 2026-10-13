@@ -43,11 +43,22 @@ AREAS = [
 ]
 
 STACK = [
-    ("Automação", ["n8n", "Python", "JavaScript", "Webhooks"]),
-    ("IA", ["OpenAI", "LLMs", "Prompt Engineering"]),
-    ("Dados", ["Oracle", "MySQL", "PostgreSQL", "Redis"]),
-    ("Integrações", ["REST APIs", "WhatsApp APIs", "Telegram API"]),
-    ("Sistemas & Infra", ["GLPI", "WinThor", "Docker", "Linux"]),
+    ("Desenvolvimento & automação", ["Python", "n8n", "JavaScript"]),
+    ("Bancos de dados", ["SQL", "Oracle", "PostgreSQL", "MySQL", "Redis"]),
+    (
+        "Integrações & IA",
+        [
+            "REST APIs",
+            "Webhooks",
+            "OpenAI",
+            "LLMs",
+            "Prompt Engineering",
+            "WhatsApp APIs",
+            "Telegram API",
+        ],
+    ),
+    ("Infraestrutura & monitoramento", ["Docker", "Linux", "Zabbix"]),
+    ("Sistemas corporativos", ["GLPI", "WinThor"]),
     ("IoT", ["ESP32", "Arduino", "C++"]),
 ]
 

@@ -21,7 +21,6 @@ PROJECTS = [
         problem="Dar visibilidade rápida a mudanças no estado da energia e do gerador.",
         stack=["ESP32", "C++", "Arduino", "Telegram API"],
         filters=["IoT", "Integrações"],
-        featured=True,
         repo="https://github.com/Sipauba/notifica-status-gerador-energia",
         symbol="⌁",
     ),
@@ -39,6 +38,7 @@ PROJECTS = [
     ),
     dict(
         slug="integra-glpi-ti-e-rh-admissao",
+        featured=True,
         name="Integração RH → TI · Admissão",
         category="Integrações & RH",
         summary="Automação que transforma solicitações de admissão do RH em demandas técnicas de criação de acessos no GLPI.",
@@ -94,6 +94,7 @@ PROJECTS = [
     ),
     dict(
         slug="pinga_ni_mim",
+        featured=True,
         name="Pinga ni mim",
         category="Monitoramento & Infraestrutura",
         summary="Aplicativo desktop que monitora hosts e serviços web por ping ou HTTP e envia alertas de falha e recuperação via WhatsApp.",
@@ -105,6 +106,7 @@ PROJECTS = [
     ),
     dict(
         slug="relatorio-setor-compras",
+        featured=True,
         name="Follow up de compras",
         category="Dados & Compras",
         summary="Aplicativo desktop que consulta pedidos do WinThor e exporta um relatório de acompanhamento em Excel.",
@@ -219,3 +221,19 @@ PROJECT_FLOWS = {
 }
 for project in PROJECTS:
     project["flow"] = PROJECT_FLOWS[project["slug"]]
+
+# Editorial ordering only; published slugs and documented capabilities stay intact.
+FEATURED_ORDER = (
+    "glados-assitente-ti",
+    "bot-cobranca",
+    "pinga_ni_mim",
+    "integra-glpi-ti-e-rh-admissao",
+    "relatorio-setor-compras",
+)
+PROJECTS.sort(
+    key=lambda project: (
+        FEATURED_ORDER.index(project["slug"])
+        if project["slug"] in FEATURED_ORDER
+        else len(FEATURED_ORDER)
+    )
+)

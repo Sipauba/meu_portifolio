@@ -20,7 +20,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt"
-          content="Mateus Sipaúba — Automação, integrações e IA aplicada. Sistemas conectados. Processos simplificados.">
+          content="Mateus Sipaúba — Automação, integrações e IA aplicada. Conecto sistemas. Simplifico processos.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ seo.title }}">
     <meta name="twitter:description" content="{{ seo.description }}">
@@ -42,6 +42,9 @@
           type="font/woff2"
           crossorigin>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <noscript>
+      <link rel="stylesheet" href="{{ asset('nojs.css') }}">
+    </noscript>
     <script src="{{ asset('site.js') }}" defer></script>
     <script type="application/ld+json">{{ seo.structured|tojson }}</script>
   </head>
@@ -49,9 +52,7 @@
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="topbar">
       <div class="shell nav-inner">
-        <a class="wordmark"
-           href="{{ url_for('home') }}"
-          >MS<span>.</span><span class="wordmark-name">mateus sipaúba<span>automação & integrações</span></span></a>
+        <a class="wordmark" href="{{ url_for('home') }}">MS<span>.</span><span class="wordmark-name">mateus sipaúba<span>automação & integrações</span></span></a>
         <button class="menu-toggle"
                 type="button"
                 aria-label="Abrir menu"
@@ -61,7 +62,7 @@
           <span aria-hidden="true"></span><span aria-hidden="true"></span>
         </button>
         <nav id="primary-nav" aria-label="Navegação principal">
-          {% for anchor, label in [('sobre', 'Sobre'), ('projetos', 'Projetos'), ('tecnologias', 'Tecnologias')] %}
+          {% for anchor, label in [('projetos', 'Projetos'), ('sobre', 'Sobre'), ('tecnologias', 'Tecnologias')] %}
             <a href="{{ '' if request.endpoint == 'home' else url_for('home') }}#{{ anchor }}"
                data-section="{{ anchor }}">{{ label }}</a>
           {% endfor %}

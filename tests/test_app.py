@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit
 
 from app import ASSET_VERSIONS, LEGACY_PROJECTS, SITE_URL, app
-from projects import PROJECTS
+from projects import FEATURED_ORDER, PROJECTS
 
 
 class Document(HTMLParser):
@@ -63,6 +63,17 @@ class PortfolioTests(unittest.TestCase):
                 self.assertTrue(any(a.get("property") == "og:image" for _, a in doc.elements))
                 self.assertTrue(any(a.get("name") == "twitter:card" for _, a in doc.elements))
         self.assertEqual(len(titles), len(paths))
+
+    def test_editorial_selection_and_case_navigation(self):
+        featured = [p["slug"] for p in PROJECTS if p.get("featured")]
+        self.assertEqual(tuple(featured), FEATURED_ORDER)
+        self.assertEqual(tuple(p["slug"] for p in PROJECTS[:5]), FEATURED_ORDER)
+        for project in PROJECTS:
+            html = self.client.get("/projetos/" + project["slug"]).get_data(as_text=True)
+            doc = Document(html)
+            for anchor in ["contexto", "solucao", "beneficios"]:
+                self.assertTrue(any(a.get("href") == "#" + anchor for _, a in doc.elements))
+                self.assertTrue(any(a.get("id") == anchor for _, a in doc.elements))
 
     def test_local_links_and_assets_resolve(self):
         paths = ["/"] + ["/projetos/" + p["slug"] for p in PROJECTS]
