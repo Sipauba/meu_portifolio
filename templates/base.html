@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080d15">
+    <meta name="color-scheme" content="dark">
+    <title>{{ seo.title }}</title>
+    <meta name="description" content="{{ seo.description }}">
+    {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+    <link rel="canonical" href="{{ seo.canonical }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Mateus Sipaúba · Portfólio">
+    <meta property="og:title" content="{{ seo.title }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <meta property="og:url" content="{{ seo.canonical }}">
+    <meta property="og:image"
+          content="{{ site_url }}{{ asset('images/social-card.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+          content="Mateus Sipaúba — Automação, integrações e IA aplicada. Sistemas conectados. Processos simplificados.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ seo.title }}">
+    <meta name="twitter:description" content="{{ seo.description }}">
+    <meta name="twitter:image"
+          content="{{ site_url }}{{ asset('images/social-card.png') }}">
+    <meta name="twitter:image:alt"
+          content="Mateus Sipaúba — Automação, integrações e IA aplicada.">
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="preload"
+          href="{{ url_for('static', filename='fonts/manrope-latin.woff2') }}"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+    <link rel="preload"
+          href="{{ url_for('static', filename='fonts/sora-latin.woff2') }}"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <script src="{{ asset('site.js') }}" defer></script>
+    <script type="application/ld+json">{{ seo.structured|tojson }}</script>
+  </head>
+  <body id="inicio">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="topbar">
+      <div class="shell nav-inner">
+        <a class="wordmark"
+           href="{{ url_for('home') }}"
+          >MS<span>.</span><span class="wordmark-name">mateus sipaúba<span>automação & integrações</span></span></a>
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="primary-nav"
+                hidden>
+          <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+        <nav id="primary-nav" aria-label="Navegação principal">
+          {% for anchor, label in [('sobre', 'Sobre'), ('projetos', 'Projetos'), ('tecnologias', 'Tecnologias')] %}
+            <a href="{{ '' if request.endpoint == 'home' else url_for('home') }}#{{ anchor }}"
+               data-section="{{ anchor }}">{{ label }}</a>
+          {% endfor %}
+          <a class="nav-contact"
+             href="{{ '' if request.endpoint == 'home' else url_for('home') }}#contato"
+             data-section="contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo" tabindex="-1">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="footer shell">
+      <a class="footer-brand" href="{{ url_for('home') }}">MS<span>.</span></a>
+      <span>© {{ year }} {{ profile.name }}<span class="footer-location">Feito em Fortaleza, CE.</span></span>
+      <a class="back-top" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    </footer>
+    {% block overlays %}{% endblock %}
+  </body>
+</html>

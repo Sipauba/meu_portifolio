@@ -3,3 +3,11 @@
 __pycache__
 *.py[cod]
 .env
+.env.*
+.ruff_cache
+tests
+test-results
+docs
+scripts
+requirements-dev.txt
+teste.txt

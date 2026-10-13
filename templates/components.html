@@ -1,0 +1,79 @@
+{% macro icon(kind, class_name='') -%}
+  <svg class="icon {{ class_name }}"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="1.5"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       aria-hidden="true">
+    {% if kind == "arrow" %}
+      <path d="M5 19 19 5M5 5h14v14" />
+    {% elif kind == "flow" %}
+      <rect x="2" y="9" width="6" height="6" rx="1.5" /><rect x="16" y="2" width="6" height="6" rx="1.5" /><rect x="16" y="16" width="6" height="6" rx="1.5" />
+      <path d="M8 12h4V5h4M12 12v7h4" />
+    {% elif kind == "code" %}
+      <path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18" />
+    {% elif kind == "spark" %}
+      <path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z" />
+    {% elif kind == "data" %}
+      <ellipse cx="12" cy="5" rx="8" ry="3" />
+      <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />
+    {% elif kind == "pulse" %}
+      <path d="M2 12h4l3-8 5 16 3-8h5" />
+    {% elif kind == "search" %}
+      <circle cx="10.5" cy="10.5" r="6.5" />
+      <path d="m16 16 5 5" />
+    {% elif kind == "mail" %}
+      <rect x="2" y="4" width="20" height="16" rx="3" />
+      <path d="m2 6 10 7L22 6" />
+    {% else %}
+      <path d="M5 12h14m-6-6 6 6-6 6" />
+    {% endif %}
+  </svg>
+{%- endmacro %}
+{% macro diagram(project) -%}
+  <div class="project-visual" aria-hidden="true">
+    <div class="visual-heading"><span>{{ 'MONITORAMENTO / IoT' if 'IoT' in project.filters else 'AUTOMAÇÃO / WORKFLOW' }}</span><span class="visual-cross">+</span></div>
+    <svg class="flow-diagram" viewBox="0 0 540 210" fill="none">
+      <path class="diagram-guide" d="M24 105h492M100 16v178M270 16v178M440 16v178" />
+      <path class="diagram-wire" d="M155 105h60m110 0h60" />
+      <path class="diagram-arrow" d="m204 100 6 5-6 5m169-10 6 5-6 5" />
+      {% for label in project.flow %}<g transform="translate({{ 45 + loop.index0 * 170 }}, 66)"><rect class="diagram-node{% if loop.index == 2 %} diagram-core{% endif %}" width="110" height="78" rx="10" /><text class="diagram-number" x="55" y="27" text-anchor="middle">0{{ loop.index }}</text><text class="diagram-label" x="55" y="52" text-anchor="middle">{{ label }}</text><circle class="diagram-port" cx="0" cy="39" r="3" /><circle class="diagram-port" cx="110" cy="39" r="3" /></g>{% endfor %}
+      {% if "IoT" in project.filters %}
+        <path class="diagram-signal" d="M45 175h36l8-8 10 16 12-27 10 19h31m234 0h34l8-8 10 16 12-27 10 19h30" />
+      {% endif %}
+    </svg>
+    <ol class="mobile-flow">{% for label in project.flow %}<li><span>0{{ loop.index }}</span><strong>{{ label }}</strong></li>{% endfor %}</ol>
+    <div class="visual-footer"><span>ENTRADA</span><span>PROCESSAMENTO</span><span>ENTREGA</span></div>
+  </div>
+{%- endmacro %}
+{% macro project_card(project, index) -%}
+  <article class="project-card {{ 'project-featured' if project.featured else 'project-compact' }}{% if index == 1 %} project-lead{% endif %}"
+           data-filters="{{ project.filters|join('|') }}"
+           data-search="{{ (project.name ~ ' ' ~ project.category ~ ' ' ~ project.summary ~ ' ' ~ project.stack|join(' '))|lower }}">
+    {% if project.featured %}{{ diagram(project) }}{% endif %}
+    <div class="project-content">
+      <div class="project-heading"><span class="project-index">{{ '%02d'|format(index) }}</span><span class="category">{{ project.category }}</span>{% if project.featured %}<span class="featured-label">Destaque</span>{% endif %}</div>
+      <h3><a class="project-title"
+   href="{{ url_for('project_detail', slug=project.slug) }}">{{ project.name }}</a></h3>
+      <p>{{ project.summary }}</p>
+      <ul class="tags"
+          aria-label="Tecnologias">{% for tag in project.stack %}<li>{{ tag }}</li>{% endfor %}</ul>
+      <div class="card-actions">
+        <a class="case-link"
+           href="{{ url_for('project_detail', slug=project.slug) }}"
+           aria-label="Explorar projeto {{ project.name }}">Explorar projeto {{ icon("arrow") }}</a><button class="summary-trigger"
+        type="button"
+        data-project-slug="{{ project.slug }}"
+        aria-label="Resumo rápido de {{ project.name }}"
+        aria-haspopup="dialog"
+        hidden>Resumo <span aria-hidden="true">+</span></button><a class="repo-link"
+   href="{{ project.repo }}"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Repositório de {{ project.name }} no GitHub (nova aba)">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </article>
+{%- endmacro %}

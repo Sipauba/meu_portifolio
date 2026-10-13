@@ -1,0 +1,96 @@
+[
+  {
+    "name": "glados-assitente-ti",
+    "url": "https://github.com/Sipauba/glados-assitente-ti",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/glados-assitente-ti"
+  },
+  {
+    "name": "notifica-status-gerador-energia",
+    "url": "https://github.com/Sipauba/notifica-status-gerador-energia",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/notifica-status-gerador-energia"
+  },
+  {
+    "name": "bot-cobranca",
+    "url": "https://github.com/Sipauba/bot-cobranca",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/bot-cobranca"
+  },
+  {
+    "name": "integra-glpi-ti-e-rh-admissao",
+    "url": "https://github.com/Sipauba/integra-glpi-ti-e-rh-admissao",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/integra-glpi-ti-e-rh-admissao"
+  },
+  {
+    "name": "integra-glpi-ti-e-rh-demissao",
+    "url": "https://github.com/Sipauba/integra-glpi-ti-e-rh-demissao",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/integra-glpi-ti-e-rh-demissao"
+  },
+  {
+    "name": "notifica-solicitacao-de-validacao-glpi",
+    "url": "https://github.com/Sipauba/notifica-solicitacao-de-validacao-glpi",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/notifica-solicitacao-de-validacao-glpi"
+  },
+  {
+    "name": "notifica-chamados-vencendo",
+    "url": "https://github.com/Sipauba/notifica-chamados-vencendo",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/notifica-chamados-vencendo"
+  },
+  {
+    "name": "glados-auto-atendimento-n8n",
+    "url": "https://github.com/Sipauba/glados-auto-atendimento-n8n",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/glados-auto-atendimento-n8n"
+  },
+  {
+    "name": "pinga_ni_mim",
+    "url": "https://github.com/Sipauba/pinga_ni_mim",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/pinga_ni_mim"
+  },
+  {
+    "name": "relatorio-setor-compras",
+    "url": "https://github.com/Sipauba/relatorio-setor-compras",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/relatorio-setor-compras"
+  },
+  {
+    "name": "giro-diario",
+    "url": "https://github.com/Sipauba/bot_atualiza_giro_dia",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/bot_atualiza_giro_dia"
+  },
+  {
+    "name": "follow-up-compras",
+    "url": "https://github.com/Sipauba/relatorio-setor-compras",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba/relatorio-setor-compras"
+  },
+  {
+    "name": "automacao-sped-fiscal",
+    "url": "https://github.com/Sipauba/automacao_txt_sped_contabil",
+    "status": 404
+  },
+  {
+    "name": "github-profile",
+    "url": "https://github.com/Sipauba",
+    "status": 200,
+    "final_url": "https://github.com/Sipauba"
+  },
+  {
+    "name": "linkedin",
+    "url": "https://www.linkedin.com/in/mateussipauba/",
+    "status": 405
+  },
+  {
+    "name": "current-production",
+    "url": "https://mateus.sipauba.com.br",
+    "status": 200,
+    "final_url": "https://mateus.sipauba.com.br"
+  }
+]

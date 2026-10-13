@@ -1,72 +1,209 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d15">
-  <meta name="description" content="Portfólio de Mateus de Souza Sipaúba: RPA, automação, integrações, IA, dados e IoT.">
-  <title>Mateus Sipaúba | RPA, Automação e Integrações</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <script src="{{ url_for('static', filename='site.js') }}" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="topbar" id="inicio">
-    <div class="shell nav-inner">
-      <a class="wordmark" href="#inicio" aria-label="Mateus Sipaúba, início">MS<span>.</span><small>PORTFOLIO / 2026</small></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
-      <nav id="primary-nav" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#atuacao">Atuação</a><a href="#projetos">Projetos</a><a href="#tecnologias">Tecnologias</a><a href="#contato">Contato</a></nav>
-      <a class="nav-github" href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+{% extends "base.html" %}
+{% from 'components.html' import icon, project_card %}
+{% block content %}
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span> AUTOMAÇÃO · INTEGRAÇÕES · IA APLICADA</p>
+      <p class="hero-intro">Olá, sou Mateus Sipaúba.</p>
+      <h1 id="hero-title">
+        Sistemas
+        <br>
+        conectados.
+        <br>
+        <span class="text-accent">Processos
+          <br>
+        simplificados.</span>
+      </h1>
+      <p class="hero-lead">Transformo rotinas operacionais em soluções com <strong>Python, n8n, APIs e inteligência artificial.</strong> Da integração entre sistemas ao acompanhamento da operação.</p>
+      <div class="hero-actions"><a class="button primary" href="#projetos">Explorar projetos {{ icon("arrow") }}</a><a class="button secondary" href="#contato">Entrar em contato {{ icon("mail") }}</a></div>
     </div>
-  </header>
-  <main id="conteudo">
-    <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> {{ profile.role }} <span class="hero-location">/ {{ profile.location }}</span></p>
-        <h1 id="hero-title">Automação que conecta <em>sistemas</em> e resolve problemas reais<span class="accent">.</span></h1>
-        <p class="hero-lead">Desenvolvo fluxos de RPA, integrações e ferramentas internas com n8n, APIs, bancos de dados e IA aplicada a processos.</p>
-        <div class="hero-actions"><a class="button primary" href="#projetos">Explorar projetos <span>↘</span></a><a class="button secondary" href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">Ver GitHub <span>↗</span></a></div>
+    <figure class="integration-map" aria-labelledby="map-title">
+      <div class="map-heading"><span id="map-title">CONECTAR. AUTOMATIZAR. RESOLVER.</span><span aria-hidden="true">↗</span></div>
+      <div class="map-canvas">
+        <svg viewBox="0 0 540 380" role="img" aria-labelledby="map-description">
+          <title id="map-description">Sistemas corporativos, APIs e bancos de dados entram em um fluxo de automação com n8n e Python para gerar ações e informação.</title>
+          <defs><pattern id="map-grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#263344" /></pattern></defs>
+          <rect width="540" height="380" fill="url(#map-grid)" />
+          <g class="map-wires" fill="none">
+          <path d="M140 80h30q15 0 15 15v80q0 15 15 15h14M140 190h74M140 300h30q15 0 15-15v-80q0-15 15-15h14M334 190h22q15 0 15-15v-55q0-15 15-15h14M334 190h22q15 0 15 15v55q0 15 15 15h14" />
+          </g>
+          <g class="map-nodes map-origin">
+          <rect x="22" y="49" width="118" height="62" rx="9" /><rect x="22" y="159" width="118" height="62" rx="9" /><rect x="22" y="269" width="118" height="62" rx="9" /><text x="39" y="73" class="map-micro">SISTEMAS</text><text x="39" y="94">GLPI · WinThor</text><text x="39" y="183" class="map-micro">INTEGRAÇÕES</text><text x="39" y="204">APIs · Webhooks</text><text x="39" y="293" class="map-micro">DADOS</text><text x="39" y="314">SQL · Redis</text>
+          </g>
+          <g class="map-nodes map-process">
+          <rect class="map-core-ring" x="204" y="132" width="140" height="116" rx="18" /><rect class="map-core" x="214" y="142" width="120" height="96" rx="11" />
+          <path class="map-core-icon" d="m263 160 10 6-10 6m20-12-10 6 10 6" fill="none" />
+          <text x="274" y="197" text-anchor="middle" class="map-core-title">n8n + Python</text><text x="274" y="219" text-anchor="middle" class="map-micro">ORQUESTRAÇÃO + IA</text>
+          </g>
+          <g class="map-nodes map-output">
+          <rect x="400" y="74" width="118" height="62" rx="9" /><rect x="400" y="244" width="118" height="62" rx="9" /><text x="417" y="98" class="map-micro">AÇÕES</text><text x="417" y="119">Fluxos integrados</text><text x="417" y="268" class="map-micro">INFORMAÇÃO</text><text x="417" y="289">Alertas · Relatórios</text>
+          </g>
+          <g class="map-ports">
+          <circle cx="140" cy="80" r="3" /><circle cx="140" cy="190" r="3" /><circle cx="140" cy="300" r="3" /><circle cx="214" cy="190" r="4" /><circle cx="334" cy="190" r="4" /><circle cx="400" cy="105" r="3" /><circle cx="400" cy="275" r="3" />
+          </g>
+          <text class="map-axis" x="22" y="360">01 / ENTRADA</text><text class="map-axis" x="222" y="360">02 / PROCESSO</text><text class="map-axis" x="410" y="360">03 / ENTREGA</text>
+        </svg>
       </div>
-      <div class="hero-panel" role="img" aria-label="Diagrama: sistemas e dados conectados à automação para gerar soluções operacionais">
-        <div class="panel-top"><span>ARQUITETURA DE SOLUÇÕES</span><span class="panel-status"><i></i> SISTEMAS CONECTADOS</span></div>
-        <div class="system-flow" aria-hidden="true">
-          <div class="system-node system-node-input"><span class="system-icon">▦</span><div><small>01 / ORIGEM</small><strong>Sistemas & dados</strong><span>WinThor · GLPI · Oracle</span></div></div>
-          <div class="system-node system-node-process"><span class="system-icon">✳</span><div><small>02 / PROCESSO</small><strong>Automação inteligente</strong><span>n8n · Python · IA</span></div></div>
-          <div class="system-node system-node-output"><span class="system-icon">↗</span><div><small>03 / ENTREGA</small><strong>Soluções internas</strong><span>Integrações · Alertas · Dados</span></div></div>
+      <ol class="map-mobile" aria-label="Fluxo de integração">
+        <li class="map-nodes map-origin">
+          <span>01</span>
+          <div><strong>Sistemas & dados</strong><small>GLPI · WinThor · APIs · SQL</small></div>
+        </li>
+        <li class="map-nodes map-process">
+          <span>02</span>
+          <div><strong>Automação & IA</strong><small>n8n + Python · Orquestração</small></div>
+        </li>
+        <li class="map-nodes map-output">
+          <span>03</span>
+          <div><strong>Soluções para a operação</strong><small>Integrações · Alertas · Relatórios</small></div>
+        </li>
+      </ol>
+      <figcaption>
+        <div class="map-controls"
+             role="group"
+             aria-label="Explorar etapas da integração"
+             hidden>
+          <button type="button" data-map-step="origin" aria-pressed="true">01 <span>Entrada</span></button><button type="button" data-map-step="process" aria-pressed="false">02 <span>Processo</span></button><button type="button" data-map-step="output" aria-pressed="false">03 <span>Entrega</span></button>
         </div>
-        <div class="panel-bottom"><span>RPA</span><span>APIs</span><span>DADOS</span><span>IA</span></div>
+        <p id="map-caption"
+           aria-live="polite">Sistemas, APIs e dados: o ponto de partida de uma integração.</p>
+        <span class="map-note">VISÃO CONCEITUAL DAS SOLUÇÕES</span>
+      </figcaption>
+    </figure>
+    <div class="hero-bottom"><a class="scroll-cue" href="#sobre"><span aria-hidden="true">↓</span> Conheça meu trabalho</a><span>{{ profile.location }} <span class="location-cross" aria-hidden="true">+</span> Desenvolvimento com contexto.</span></div>
+  </section>
+  <section class="section about-section"
+           id="sobre"
+           aria-labelledby="about-title">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow">01 / SOBRE & ATUAÇÃO</p>
+        <span class="section-note">Entre a operação e o código.</span>
       </div>
-      <a class="scroll-cue" href="#sobre">ROLE PARA EXPLORAR <span>↓</span></a>
-    </section>
-    <section class="section about-section" id="sobre"><div class="shell about-layout"><div class="section-label">01 / SOBRE MIM</div><div><h2>Da necessidade operacional à <span>solução que funciona.</span></h2><p>Sou {{ profile.name }} e atuo na operação de sistemas corporativos e infraestrutura: atendo usuários do ERP WinThor, administro o GLPI, acessos e permissões, e resolvo demandas ligadas às regras de negócio. Também desenvolvo consultas e relatórios em Oracle/SQL, gerencio Active Directory, VPS e contêineres Docker, além de monitorar serviços com Zabbix e administrar inventário e firewall. A partir dessas necessidades, crio automações em Python e n8n, integrações, chatbots e agentes de IA.</p><div class="about-chips"><span>Process Automation</span><span>Systems Integration</span><span>AI-assisted Automation</span></div></div></div></section>
-    <section class="section" id="atuacao"><div class="shell"><div class="section-heading"><div><p class="section-label">02 / ÁREAS DE ATUAÇÃO</p><h2>Onde tecnologia<br><span>vira resultado.</span></h2></div><p>Atuação prática na interseção entre processos, sistemas e pessoas.</p></div><div class="areas-grid">{% for number, title, description in areas %}<article class="area-card"><span class="area-number">{{ number }} /</span><div class="area-icon" aria-hidden="true">{% if loop.index == 1 %}⌘{% elif loop.index == 2 %}⤳{% elif loop.index == 3 %}✳{% else %}▤{% endif %}</div><h3>{{ title }}</h3><p>{{ description }}</p></article>{% endfor %}</div></div></section>
-    <section class="section featured-section" id="destaques"><div class="shell"><div class="section-heading"><div><p class="section-label">03 / SELEÇÃO</p><h2>Projetos em <span>destaque.</span></h2></div><p>Três formas de aplicar automação em cenários reais.</p></div><div class="featured-grid">{% for project in featured %}<article class="featured-card featured-{{ loop.index }}"><a class="card-cover-link" data-project-slug="{{ project.slug }}" href="{{ url_for('project_detail', slug=project.slug) }}" aria-label="Ver resumo de {{ project.name }}"></a><div class="featured-visual"><span class="visual-label">CASE / 0{{ loop.index }}</span><span class="visual-symbol" aria-hidden="true">{{ project.symbol }}</span><span class="visual-corner">↗</span></div><div class="featured-content"><span class="category">{{ project.category }}</span><h3>{{ project.name }}</h3><p>{{ project.summary }}</p><div class="tag-row">{% for tag in project.stack[:4] %}<span>{{ tag }}</span>{% endfor %}{% if project.stack|length > 4 %}<span>+{{ project.stack|length - 4 }}</span>{% endif %}</div><div class="card-actions"><span>Ver resumo ↗</span><a href="{{ project.repo }}" target="_blank" rel="noopener noreferrer">Ver no GitHub <span>↗</span></a></div></div></article>{% endfor %}</div></div></section>
-    <section class="section projects-section" id="projetos"><div class="shell"><div class="section-heading"><div><p class="section-label">04 / PORTFÓLIO</p><h2>Todos os <span>projetos.</span></h2></div><p>Clique em um card para ver o resumo. Código e documentação no GitHub.</p></div><div class="project-toolbar"><div class="filters" role="group" aria-label="Filtrar projetos"><button class="filter active" type="button" data-filter="Todos" aria-pressed="true">Todos</button>{% for name in ['RPA', 'IA', 'GLPI', 'Integrações', 'IoT'] %}<button class="filter" type="button" data-filter="{{ name }}" aria-pressed="false">{{ name }}</button>{% endfor %}</div><span class="project-count" aria-live="polite">{{ projects|length }} projetos</span></div><div class="project-grid">{% for project in projects %}<article class="project-card" data-filters="{{ project.filters|join('|') }}"><a class="card-cover-link" data-project-slug="{{ project.slug }}" href="{{ url_for('project_detail', slug=project.slug) }}" aria-label="Ver resumo de {{ project.name }}"></a><div class="project-card-top"><span class="category">{{ project.category }}</span><span class="card-symbol" aria-hidden="true">{{ project.symbol }}</span></div><h3>{{ project.name }}</h3><p>{{ project.summary }}</p><p class="problem"><strong>Resolve:</strong> {{ project.problem }}</p><div class="tag-row">{% for tag in project.stack[:5] %}<span>{{ tag }}</span>{% endfor %}{% if project.stack|length > 5 %}<span>+{{ project.stack|length - 5 }}</span>{% endif %}</div><div class="card-actions"><span>Ver resumo ↗</span><a class="card-link" href="{{ project.repo }}" target="_blank" rel="noopener noreferrer">Ver no GitHub <span>↗</span></a></div></article>{% endfor %}</div><p class="empty-state" hidden>Nenhum projeto nesta categoria.</p></div></section>
-    <section class="section stack-section" id="tecnologias"><div class="shell"><div class="section-heading"><div><p class="section-label">05 / FERRAMENTAS</p><h2>Stack <span>tecnológica.</span></h2></div><p>Tecnologias usadas para construir, conectar e operar soluções.</p></div><div class="stack-grid">{% for group, items in stack %}<div class="stack-group"><h3>{{ group }}</h3><div class="tag-row">{% for item in items %}<span>{{ item }}</span>{% endfor %}</div></div>{% endfor %}</div></div></section>
-    <section class="contact-section shell" id="contato"><p class="section-label"><span class="live-dot"></span> 06 / CONTATO</p><h2>Vamos transformar um processo em <span>uma solução.</span></h2><p>Aberto a conversas sobre RPA, automação, integrações e desenvolvimento de soluções internas.</p><div class="contact-actions"><a class="button contact-button" href="mailto:{{ profile.email }}">Enviar e-mail <span>↗</span></a><a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></section>
-  </main>
+      <div class="about-layout">
+        <div class="about-copy" data-reveal>
+          <h2 id="about-title">
+            Entender o processo.
+            <br>
+            <span class="muted">Construir a solução.</span>
+          </h2>
+          <p>Sou <strong>{{ profile.name }}</strong>. Trabalho com sistemas corporativos e infraestrutura, próximo de quem usa a tecnologia todos os dias.</p>
+          <p>Atendo usuários do ERP WinThor, administro o GLPI, acessos e permissões, e desenvolvo consultas e relatórios em Oracle/SQL. Também atuo com Active Directory, VPS, Docker, Zabbix, inventário e firewall.</p>
+          <p>É desse contato com a operação que surgem minhas automações em Python e n8n, integrações, chatbots e agentes de IA: soluções para necessidades concretas.</p>
+          <a class="text-link"
+             href="{{ profile.linkedin }}"
+             target="_blank"
+             rel="noopener noreferrer">Minha trajetória no LinkedIn {{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a>
+        </div>
+        <div class="expertise" id="atuacao" aria-label="Áreas de atuação">{% for number, title, description in areas %}<article class="expertise-row" data-reveal><span class="expertise-icon">{{ icon(['flow', 'code', 'spark', 'data'][loop.index0]) }}</span><div><h3>{{ title }}</h3>
+<p>{{ description }}</p></div><span class="row-number">{{ number }}</span></article>{% endfor %}</div></div>
+    </div>
+  </section>
+  <section class="section projects-section shell"
+           id="projetos"
+           aria-labelledby="projects-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 / PROJETOS</p>
+        <h2 id="projects-title">
+          Código que resolve.
+          <br>
+          <span class="muted">Soluções em contexto.</span>
+        </h2>
+      </div>
+      <p>Da conversa no WhatsApp ao monitoramento de infraestrutura. Explore o problema, o fluxo e as tecnologias de cada projeto.</p>
+    </div>
+    <div class="project-toolbar" hidden><div class="filters"
+     role="group"
+     aria-label="Filtrar projetos por categoria"><button class="filter active"
+        type="button"
+        data-filter="Todos"
+        aria-pressed="true">Todos <span>{{ projects|length }}</span></button>{% for name in ['RPA', 'IA', 'GLPI', 'Integrações', 'IoT'] %}<button class="filter"
+        type="button"
+        data-filter="{{ name }}"
+        aria-pressed="false">{{ name }}</button>{% endfor %}</div><label class="project-search">{{ icon("search") }}<span class="sr-only">Buscar projetos por nome ou tecnologia</span><input type="search"
+       id="project-search"
+       placeholder="Buscar projeto ou tecnologia"
+       autocomplete="off"
+       maxlength="120"></label></div>
+    <div class="collection-heading" id="destaques"><span id="collection-label">SELEÇÃO & ACERVO</span><span class="project-count"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true">{{ projects|length }} projetos</span></div>
+    <div class="project-grid">{% for project in projects %}{{ project_card(project, loop.index) }}{% endfor %}</div>
+    <div class="empty-state" hidden>
+      <h3>Nenhum projeto encontrado.</h3>
+      <p>Tente outra tecnologia ou explore a seleção completa.</p>
+      <button class="button secondary"
+              id="reset-filters"
+              type="button">Limpar busca e filtros <span aria-hidden="true">↺</span></button>
+    </div>
+    <a class="all-repos text-link"
+       href="{{ profile.github }}"
+       target="_blank"
+       rel="noopener noreferrer">Mais código e documentação no GitHub {{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a>
+  </section>
+  <section class="section stack-section"
+           id="tecnologias"
+           aria-labelledby="stack-title"><div class="shell stack-layout"><div class="stack-intro" data-reveal><p class="eyebrow">03 / TECNOLOGIAS</p><h2 id="stack-title">As ferramentas.<br><span class="muted">O que faço com elas.</span></h2>
+<p>Uma stack que acompanha o processo: conectar a origem, transformar os dados e sustentar a entrega.</p><span class="stack-mark" aria-hidden="true">{<span>↗</span>}</span></div><div class="stack-list">{% for group, items in stack %}<div class="stack-row" data-reveal><h3><span class="row-number">{{ '%02d'|format(loop.index) }}</span>{{ group }}</h3>
+<ul class="tags">{% for item in items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endfor %}</div></div></section>
+  <section class="contact-section shell"
+           id="contato"
+           aria-labelledby="contact-title">
+    <div class="contact-copy">
+      <p class="eyebrow">04 / VAMOS CONVERSAR</p>
+      <h2 id="contact-title">
+        O próximo processo
+        <br>
+        pode ser <span class="text-accent">mais simples.</span>
+      </h2>
+      <p>Uma oportunidade, uma integração ou um desafio técnico. Estou aberto a conversar sobre o que podemos construir.</p>
+      <a class="button primary" href="mailto:{{ profile.email }}">Entrar em contato {{ icon("arrow") }}</a>
+    </div>
+    <div class="contact-links"><a href="mailto:{{ profile.email }}"><span>E-MAIL<strong>{{ profile.email }}</strong></span>{{ icon("arrow") }}</a><a href="{{ profile.linkedin }}"
+   target="_blank"
+   rel="noopener noreferrer"><span>TRAJETÓRIA<strong>LinkedIn</strong></span>{{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a><a href="{{ profile.github }}" target="_blank" rel="noopener noreferrer"><span>CÓDIGO & DOCUMENTAÇÃO<strong>GitHub</strong></span>{{ icon("arrow") }}<span class="sr-only"> (nova aba)</span></a></div>
+  </section>
+{% endblock %}
+{% block overlays %}
   <script id="projects-data" type="application/json">{{ projects|tojson }}</script>
-  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-summary">
-    <div class="dialog-inner">
-      <div class="dialog-scroll">
-      <div class="dialog-top"><span class="section-label" id="dialog-category"></span><button class="dialog-close" type="button" aria-label="Fechar resumo do projeto">×</button></div>
+  <dialog class="project-dialog"
+          id="project-dialog"
+          aria-labelledby="dialog-title"
+          aria-describedby="dialog-summary">
+    <div class="dialog-top">
+      <span class="eyebrow" id="dialog-category"></span>
+      <button class="dialog-close"
+              type="button"
+              aria-label="Fechar resumo do projeto"
+              autofocus>×</button>
+    </div>
+    <div class="dialog-scroll" tabindex="0" aria-label="Conteúdo do resumo">
       <h2 id="dialog-title"></h2>
       <p class="dialog-summary" id="dialog-summary"></p>
-      <div class="dialog-columns">
-        <div class="dialog-main">
-          <section><p class="section-label">O DESAFIO</p><p id="dialog-problem"></p></section>
-          <section><p class="section-label">COMO FUNCIONA</p><ol class="workflow-list" id="dialog-workflow"></ol></section>
-          <section><p class="section-label">POR QUE IMPORTA</p><p id="dialog-impact"></p></section>
-        </div>
-        <aside class="dialog-aside"><p class="section-label">TECNOLOGIAS</p><div class="tag-row" id="dialog-stack"></div></aside>
-      </div>
-      </div>
-      <div class="dialog-footer"><a class="button primary" id="dialog-github" target="_blank" rel="noopener noreferrer">Ver no GitHub <span>↗</span></a><button class="dialog-back" type="button">Voltar aos projetos</button></div>
+      <section>
+        <h3>O desafio</h3>
+        <p id="dialog-problem"></p>
+      </section>
+      <section>
+        <h3>Como funciona</h3>
+        <ol class="workflow-list" id="dialog-workflow">
+        </ol>
+      </section>
+      <section>
+        <h3>Por que importa</h3>
+        <p id="dialog-impact"></p>
+      </section>
+      <section>
+        <h3>Tecnologias</h3>
+        <ul class="tags" id="dialog-stack">
+        </ul>
+      </section>
     </div>
+    <div class="dialog-footer"><a class="button primary" id="dialog-case">Explorar projeto {{ icon("arrow") }}</a><a class="button secondary"
+   id="dialog-github"
+   target="_blank"
+   rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (nova aba)</span></a></div>
   </dialog>
-  <footer class="footer shell"><span>© 2026 {{ profile.name }}</span><span>Feito em Fortaleza, CE</span><a href="#inicio">Voltar ao topo ↑</a></footer>
-</body>
-</html>
+{% endblock %}

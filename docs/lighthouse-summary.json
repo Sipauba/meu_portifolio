@@ -1,0 +1,174 @@
+[
+  {
+    "page": "home",
+    "mode": "desktop",
+    "lighthouse_version": "13.5.0",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 282.7844,
+        "display": "0.3 s"
+      },
+      "largest-contentful-paint": {
+        "value": 442.7844,
+        "display": "0.4 s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.02410825339948302,
+        "display": "0.024"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "speed-index": {
+        "value": 282.7844,
+        "display": "0.3 s"
+      }
+    },
+    "form_factor": "desktop",
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    }
+  },
+  {
+    "page": "home",
+    "mode": "mobile",
+    "lighthouse_version": "13.5.0",
+    "scores": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1352.6897,
+        "display": "1.4 s"
+      },
+      "largest-contentful-paint": {
+        "value": 1952.6897,
+        "display": "2.0 s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 80,
+        "display": "80 ms"
+      },
+      "speed-index": {
+        "value": 1352.6897,
+        "display": "1.4 s"
+      }
+    },
+    "form_factor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    }
+  },
+  {
+    "page": "case",
+    "mode": "desktop",
+    "lighthouse_version": "13.5.0",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 281.8573,
+        "display": "0.3 s"
+      },
+      "largest-contentful-paint": {
+        "value": 361.8573,
+        "display": "0.4 s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "speed-index": {
+        "value": 281.8573,
+        "display": "0.3 s"
+      }
+    },
+    "form_factor": "desktop",
+    "throttling": {
+      "rttMs": 40,
+      "throughputKbps": 10240,
+      "requestLatencyMs": 0,
+      "downloadThroughputKbps": 0,
+      "uploadThroughputKbps": 0,
+      "cpuSlowdownMultiplier": 1
+    }
+  },
+  {
+    "page": "case",
+    "mode": "mobile",
+    "lighthouse_version": "13.5.0",
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100,
+      "agentic-browsing": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 903.2977000000001,
+        "display": "0.9 s"
+      },
+      "largest-contentful-paint": {
+        "value": 1653.2977,
+        "display": "1.7 s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0 ms"
+      },
+      "speed-index": {
+        "value": 903.2977000000001,
+        "display": "0.9 s"
+      }
+    },
+    "form_factor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    }
+  }
+]

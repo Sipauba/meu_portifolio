@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="shell error-page">
+    <p class="eyebrow">404 / CAMINHO NÃO ENCONTRADO</p>
+    <h1>
+      Vamos retomar
+      <br>
+      <span class="text-accent">a conexão.</span>
+    </h1>
+    <p>Esta página não está disponível. Os projetos e formas de contato continuam por aqui.</p>
+    <a class="button primary"
+       href="{{ url_for('home') }}#projetos">Explorar projetos <span aria-hidden="true">↗</span></a>
+  </section>
+{% endblock %}
